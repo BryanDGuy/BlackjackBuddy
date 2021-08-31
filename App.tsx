@@ -22,9 +22,7 @@ const App = () => {
 
   return (
     <View>
-      <Text>
-        Your hand is {hand.getName()}
-      </Text>
+      <Text>Your hand is {hand.getName()}</Text>
       <Text>The dealer has a(n) {Card[dealerCard]}</Text>
       <Text>Your next move should be {Move[nextMove]}</Text>
     </View>
