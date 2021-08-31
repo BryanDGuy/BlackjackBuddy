@@ -39,90 +39,107 @@ class Hand {
     } else if (this.isSoftHands()) {
       if (this.getValue() === 20) {
         handIndex = 10;
-      }
-      if (this.getValue() === 19) {
+      } else if (this.getValue() === 19) {
         handIndex = 11;
-      }
-      if (this.getValue() === 18) {
+      } else if (this.getValue() === 18) {
         handIndex = 12;
-      }
-      if (this.getValue() === 17) {
+      } else if (this.getValue() === 17) {
         handIndex = 13;
-      }
-      if (this.getValue() === 16) {
+      } else if (this.getValue() === 16) {
         handIndex = 14;
-      }
-      if (this.getValue() === 15) {
+      } else if (this.getValue() === 15) {
         handIndex = 15;
-      }
-      if (this.getValue() === 14) {
+      } else if (this.getValue() === 14) {
         handIndex = 16;
-      }
-      if (this.getValue() === 13) {
+      } else if (this.getValue() === 13) {
         handIndex = 17;
       }
     } else if (this.isPair()) {
-      if (this.card1 === Card.ACE) {
-        handIndex = 18;
-      }
-      if (this.card1 === Card.TEN) {
-        handIndex = 19;
-      }
-      if (this.card1 === Card.NINE) {
-        handIndex = 20;
-      }
-      if (this.card1 === Card.EIGHT) {
-        handIndex = 21;
-      }
-      if (this.card1 === Card.SEVEN) {
-        handIndex = 22;
-      }
-      if (this.card1 === Card.SIX) {
-        handIndex = 23;
-      }
-      if (this.card1 === Card.FIVE) {
-        handIndex = 24;
-      }
-      if (this.card1 === Card.FOUR) {
-        handIndex = 25;
-      }
-      if (this.card1 === Card.THREE) {
-        handIndex = 26;
-      }
-      if (this.card1 === Card.TWO) {
-        handIndex = 27;
+      switch (this.card1) {
+        case Card.ACE: {
+          handIndex = 18;
+          break;
+        }
+        case Card.TEN: {
+          handIndex = 19;
+          break;
+        }
+        case Card.NINE: {
+          handIndex = 20;
+          break;
+        }
+        case Card.EIGHT: {
+          handIndex = 21;
+          break;
+        }
+        case Card.SEVEN: {
+          handIndex = 22;
+          break;
+        }
+        case Card.SIX: {
+          handIndex = 23;
+          break;
+        }
+        case Card.FIVE: {
+          handIndex = 24;
+          break;
+        }
+        case Card.FOUR: {
+          handIndex = 25;
+          break;
+        }
+        case Card.THREE: {
+          handIndex = 26;
+          break;
+        }
+        case Card.TWO: {
+          handIndex = 27;
+          break;
+        }
       }
     }
 
-    if (dealerCard === Card.ACE) {
-      dealerIndex = 0;
-    }
-    if (dealerCard === Card.TEN) {
-      dealerIndex = 1;
-    }
-    if (dealerCard === Card.NINE) {
-      dealerIndex = 2;
-    }
-    if (dealerCard === Card.EIGHT) {
-      dealerIndex = 3;
-    }
-    if (dealerCard === Card.SEVEN) {
-      dealerIndex = 4;
-    }
-    if (dealerCard === Card.SIX) {
-      dealerIndex = 5;
-    }
-    if (dealerCard === Card.FIVE) {
-      dealerIndex = 6;
-    }
-    if (dealerCard === Card.FOUR) {
-      dealerIndex = 7;
-    }
-    if (dealerCard === Card.THREE) {
-      dealerIndex = 8;
-    }
-    if (dealerCard === Card.TWO) {
-      dealerIndex = 9;
+    switch (dealerCard) {
+      case Card.ACE: {
+        dealerIndex = 0;
+        break;
+      }
+      case Card.TEN: {
+        dealerIndex = 1;
+        break;
+      }
+      case Card.NINE: {
+        dealerIndex = 2;
+        break;
+      }
+      case Card.EIGHT: {
+        dealerIndex = 3;
+        break;
+      }
+      case Card.SEVEN: {
+        dealerIndex = 4;
+        break;
+      }
+      case Card.SIX: {
+        dealerIndex = 5;
+        break;
+      }
+      case Card.FIVE: {
+        dealerIndex = 6;
+        break;
+      }
+      case Card.FOUR: {
+        dealerIndex = 7;
+        break;
+      }
+      case Card.THREE: {
+        dealerIndex = 8;
+        break;
+      }
+      case Card.TWO: {
+        dealerIndex = 9;
+        break;
+      }
     }
 
     return this.decisionMatrix[handIndex][dealerIndex];

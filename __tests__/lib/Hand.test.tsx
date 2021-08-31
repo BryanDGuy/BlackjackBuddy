@@ -1340,7 +1340,6 @@ describe('Hand: 2 3 // 2 4 // 2 5 // 2 6 // 3 2 // 3 4 // 3 5 // 4 2 // 4 3 // 5
   const hand11 = new Hand(Card.FIVE, Card.THREE);
   const hand12 = new Hand(Card.SIX, Card.TWO);
 
-
   it('Dealer: 2', () => {
     const nextMove1 = hand1.decideMove(Card.TWO);
     const nextMove2 = hand2.decideMove(Card.TWO);
