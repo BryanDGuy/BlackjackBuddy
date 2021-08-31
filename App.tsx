@@ -9,17 +9,10 @@
  */
 
 import React from 'react';
-import {
-  Text,
-} from 'react-native';
-
+import {Text} from 'react-native';
 
 const App = () => {
-  return (
-    <Text>
-      Hi Kitty
-    </Text>
-  );
+  return <Text>Hi Kitty</Text>;
 };
 
 export default App;

@@ -1,8 +1,8 @@
 enum Move {
-    STAND,
-    HIT,
-    DOUBLEDOWN,
-    SPLIT
+  STAND,
+  HIT,
+  DOUBLEDOWN,
+  SPLIT,
 }
 
 export default Move;
