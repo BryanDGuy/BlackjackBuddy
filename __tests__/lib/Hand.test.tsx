@@ -1620,3 +1620,1650 @@ describe('Hand: 2 3 // 2 4 // 2 5 // 2 6 // 3 2 // 3 4 // 3 5 // 4 2 // 4 3 // 5
     expect(nextMove12).toEqual(Move.HIT);
   });
 });
+
+describe('Hand: 2 7 // 3 6 // 4 5 // 5 4 // 6 3 // 7 2 (Hard 9)', () => {
+  const hand1 = new Hand(Card.TWO, Card.SEVEN);
+  const hand2 = new Hand(Card.THREE, Card.SIX);
+  const hand3 = new Hand(Card.FOUR, Card.FIVE);
+  const hand4 = new Hand(Card.FIVE, Card.FOUR);
+  const hand5 = new Hand(Card.SIX, Card.THREE);
+  const hand6 = new Hand(Card.SEVEN, Card.TWO);
+
+  it('Dealer: 2', () => {
+    const nextMove1 = hand1.decideMove(Card.TWO);
+    const nextMove2 = hand2.decideMove(Card.TWO);
+    const nextMove3 = hand3.decideMove(Card.TWO);
+    const nextMove4 = hand4.decideMove(Card.TWO);
+    const nextMove5 = hand5.decideMove(Card.TWO);
+    const nextMove6 = hand6.decideMove(Card.TWO);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 3', () => {
+    const nextMove1 = hand1.decideMove(Card.THREE);
+    const nextMove2 = hand2.decideMove(Card.THREE);
+    const nextMove3 = hand3.decideMove(Card.THREE);
+    const nextMove4 = hand4.decideMove(Card.THREE);
+    const nextMove5 = hand5.decideMove(Card.THREE);
+    const nextMove6 = hand6.decideMove(Card.THREE);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 4', () => {
+    const nextMove1 = hand1.decideMove(Card.FOUR);
+    const nextMove2 = hand2.decideMove(Card.FOUR);
+    const nextMove3 = hand3.decideMove(Card.FOUR);
+    const nextMove4 = hand4.decideMove(Card.FOUR);
+    const nextMove5 = hand5.decideMove(Card.FOUR);
+    const nextMove6 = hand6.decideMove(Card.FOUR);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 5', () => {
+    const nextMove1 = hand1.decideMove(Card.FIVE);
+    const nextMove2 = hand2.decideMove(Card.FIVE);
+    const nextMove3 = hand3.decideMove(Card.FIVE);
+    const nextMove4 = hand4.decideMove(Card.FIVE);
+    const nextMove5 = hand5.decideMove(Card.FIVE);
+    const nextMove6 = hand6.decideMove(Card.FIVE);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 6', () => {
+    const nextMove1 = hand1.decideMove(Card.SIX);
+    const nextMove2 = hand2.decideMove(Card.SIX);
+    const nextMove3 = hand3.decideMove(Card.SIX);
+    const nextMove4 = hand4.decideMove(Card.SIX);
+    const nextMove5 = hand5.decideMove(Card.SIX);
+    const nextMove6 = hand6.decideMove(Card.SIX);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 7', () => {
+    const nextMove1 = hand1.decideMove(Card.SEVEN);
+    const nextMove2 = hand2.decideMove(Card.SEVEN);
+    const nextMove3 = hand3.decideMove(Card.SEVEN);
+    const nextMove4 = hand4.decideMove(Card.SEVEN);
+    const nextMove5 = hand5.decideMove(Card.SEVEN);
+    const nextMove6 = hand6.decideMove(Card.SEVEN);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 8', () => {
+    const nextMove1 = hand1.decideMove(Card.EIGHT);
+    const nextMove2 = hand2.decideMove(Card.EIGHT);
+    const nextMove3 = hand3.decideMove(Card.EIGHT);
+    const nextMove4 = hand4.decideMove(Card.EIGHT);
+    const nextMove5 = hand5.decideMove(Card.EIGHT);
+    const nextMove6 = hand6.decideMove(Card.EIGHT);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 9', () => {
+    const nextMove1 = hand1.decideMove(Card.NINE);
+    const nextMove2 = hand2.decideMove(Card.NINE);
+    const nextMove3 = hand3.decideMove(Card.NINE);
+    const nextMove4 = hand4.decideMove(Card.NINE);
+    const nextMove5 = hand5.decideMove(Card.NINE);
+    const nextMove6 = hand6.decideMove(Card.NINE);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 10', () => {
+    const nextMove1 = hand1.decideMove(Card.TEN);
+    const nextMove2 = hand2.decideMove(Card.TEN);
+    const nextMove3 = hand3.decideMove(Card.TEN);
+    const nextMove4 = hand4.decideMove(Card.TEN);
+    const nextMove5 = hand5.decideMove(Card.TEN);
+    const nextMove6 = hand6.decideMove(Card.TEN);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+  });
+
+  it('Dealer: A', () => {
+    const nextMove1 = hand1.decideMove(Card.ACE);
+    const nextMove2 = hand2.decideMove(Card.ACE);
+    const nextMove3 = hand3.decideMove(Card.ACE);
+    const nextMove4 = hand4.decideMove(Card.ACE);
+    const nextMove5 = hand5.decideMove(Card.ACE);
+    const nextMove6 = hand6.decideMove(Card.ACE);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+  });
+});
+
+describe('Hand: 2 8 // 3 7 // 4 6 // 6 4 // 7 3 // 8 2 (Hard 10)', () => {
+  const hand1 = new Hand(Card.TWO, Card.EIGHT);
+  const hand2 = new Hand(Card.THREE, Card.SEVEN);
+  const hand3 = new Hand(Card.FOUR, Card.SIX);
+  const hand4 = new Hand(Card.SIX, Card.FOUR);
+  const hand5 = new Hand(Card.SEVEN, Card.THREE);
+  const hand6 = new Hand(Card.EIGHT, Card.TWO);
+
+  it('Dealer: 2', () => {
+    const nextMove1 = hand1.decideMove(Card.TWO);
+    const nextMove2 = hand2.decideMove(Card.TWO);
+    const nextMove3 = hand3.decideMove(Card.TWO);
+    const nextMove4 = hand4.decideMove(Card.TWO);
+    const nextMove5 = hand5.decideMove(Card.TWO);
+    const nextMove6 = hand6.decideMove(Card.TWO);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 3', () => {
+    const nextMove1 = hand1.decideMove(Card.THREE);
+    const nextMove2 = hand2.decideMove(Card.THREE);
+    const nextMove3 = hand3.decideMove(Card.THREE);
+    const nextMove4 = hand4.decideMove(Card.THREE);
+    const nextMove5 = hand5.decideMove(Card.THREE);
+    const nextMove6 = hand6.decideMove(Card.THREE);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 4', () => {
+    const nextMove1 = hand1.decideMove(Card.FOUR);
+    const nextMove2 = hand2.decideMove(Card.FOUR);
+    const nextMove3 = hand3.decideMove(Card.FOUR);
+    const nextMove4 = hand4.decideMove(Card.FOUR);
+    const nextMove5 = hand5.decideMove(Card.FOUR);
+    const nextMove6 = hand6.decideMove(Card.FOUR);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 5', () => {
+    const nextMove1 = hand1.decideMove(Card.FIVE);
+    const nextMove2 = hand2.decideMove(Card.FIVE);
+    const nextMove3 = hand3.decideMove(Card.FIVE);
+    const nextMove4 = hand4.decideMove(Card.FIVE);
+    const nextMove5 = hand5.decideMove(Card.FIVE);
+    const nextMove6 = hand6.decideMove(Card.FIVE);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 6', () => {
+    const nextMove1 = hand1.decideMove(Card.SIX);
+    const nextMove2 = hand2.decideMove(Card.SIX);
+    const nextMove3 = hand3.decideMove(Card.SIX);
+    const nextMove4 = hand4.decideMove(Card.SIX);
+    const nextMove5 = hand5.decideMove(Card.SIX);
+    const nextMove6 = hand6.decideMove(Card.SIX);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 7', () => {
+    const nextMove1 = hand1.decideMove(Card.SEVEN);
+    const nextMove2 = hand2.decideMove(Card.SEVEN);
+    const nextMove3 = hand3.decideMove(Card.SEVEN);
+    const nextMove4 = hand4.decideMove(Card.SEVEN);
+    const nextMove5 = hand5.decideMove(Card.SEVEN);
+    const nextMove6 = hand6.decideMove(Card.SEVEN);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 8', () => {
+    const nextMove1 = hand1.decideMove(Card.EIGHT);
+    const nextMove2 = hand2.decideMove(Card.EIGHT);
+    const nextMove3 = hand3.decideMove(Card.EIGHT);
+    const nextMove4 = hand4.decideMove(Card.EIGHT);
+    const nextMove5 = hand5.decideMove(Card.EIGHT);
+    const nextMove6 = hand6.decideMove(Card.EIGHT);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 9', () => {
+    const nextMove1 = hand1.decideMove(Card.NINE);
+    const nextMove2 = hand2.decideMove(Card.NINE);
+    const nextMove3 = hand3.decideMove(Card.NINE);
+    const nextMove4 = hand4.decideMove(Card.NINE);
+    const nextMove5 = hand5.decideMove(Card.NINE);
+    const nextMove6 = hand6.decideMove(Card.NINE);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 10', () => {
+    const nextMove1 = hand1.decideMove(Card.TEN);
+    const nextMove2 = hand2.decideMove(Card.TEN);
+    const nextMove3 = hand3.decideMove(Card.TEN);
+    const nextMove4 = hand4.decideMove(Card.TEN);
+    const nextMove5 = hand5.decideMove(Card.TEN);
+    const nextMove6 = hand6.decideMove(Card.TEN);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+  });
+
+  it('Dealer: A', () => {
+    const nextMove1 = hand1.decideMove(Card.ACE);
+    const nextMove2 = hand2.decideMove(Card.ACE);
+    const nextMove3 = hand3.decideMove(Card.ACE);
+    const nextMove4 = hand4.decideMove(Card.ACE);
+    const nextMove5 = hand5.decideMove(Card.ACE);
+    const nextMove6 = hand6.decideMove(Card.ACE);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+  });
+});
+
+describe('Hand: 2 9 // 3 8 // 4 7 // 5 6 // 6 5 // 7 4 // 8 3 // 9 2 (Hard 11)', () => {
+  const hand1 = new Hand(Card.TWO, Card.NINE);
+  const hand2 = new Hand(Card.THREE, Card.EIGHT);
+  const hand3 = new Hand(Card.FOUR, Card.SEVEN);
+  const hand4 = new Hand(Card.FIVE, Card.SIX);
+  const hand5 = new Hand(Card.SIX, Card.FIVE);
+  const hand6 = new Hand(Card.SEVEN, Card.FOUR);
+  const hand7 = new Hand(Card.EIGHT, Card.THREE);
+  const hand8 = new Hand(Card.NINE, Card.TWO);
+
+  it('Dealer: 2', () => {
+    const nextMove1 = hand1.decideMove(Card.TWO);
+    const nextMove2 = hand2.decideMove(Card.TWO);
+    const nextMove3 = hand3.decideMove(Card.TWO);
+    const nextMove4 = hand4.decideMove(Card.TWO);
+    const nextMove5 = hand5.decideMove(Card.TWO);
+    const nextMove6 = hand6.decideMove(Card.TWO);
+    const nextMove7 = hand7.decideMove(Card.TWO);
+    const nextMove8 = hand8.decideMove(Card.TWO);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove7).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove8).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 3', () => {
+    const nextMove1 = hand1.decideMove(Card.THREE);
+    const nextMove2 = hand2.decideMove(Card.THREE);
+    const nextMove3 = hand3.decideMove(Card.THREE);
+    const nextMove4 = hand4.decideMove(Card.THREE);
+    const nextMove5 = hand5.decideMove(Card.THREE);
+    const nextMove6 = hand6.decideMove(Card.THREE);
+    const nextMove7 = hand7.decideMove(Card.THREE);
+    const nextMove8 = hand8.decideMove(Card.THREE);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove7).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove8).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 4', () => {
+    const nextMove1 = hand1.decideMove(Card.FOUR);
+    const nextMove2 = hand2.decideMove(Card.FOUR);
+    const nextMove3 = hand3.decideMove(Card.FOUR);
+    const nextMove4 = hand4.decideMove(Card.FOUR);
+    const nextMove5 = hand5.decideMove(Card.FOUR);
+    const nextMove6 = hand6.decideMove(Card.FOUR);
+    const nextMove7 = hand7.decideMove(Card.FOUR);
+    const nextMove8 = hand8.decideMove(Card.FOUR);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove7).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove8).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 5', () => {
+    const nextMove1 = hand1.decideMove(Card.FIVE);
+    const nextMove2 = hand2.decideMove(Card.FIVE);
+    const nextMove3 = hand3.decideMove(Card.FIVE);
+    const nextMove4 = hand4.decideMove(Card.FIVE);
+    const nextMove5 = hand5.decideMove(Card.FIVE);
+    const nextMove6 = hand6.decideMove(Card.FIVE);
+    const nextMove7 = hand7.decideMove(Card.FIVE);
+    const nextMove8 = hand8.decideMove(Card.FIVE);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove7).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove8).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 6', () => {
+    const nextMove1 = hand1.decideMove(Card.SIX);
+    const nextMove2 = hand2.decideMove(Card.SIX);
+    const nextMove3 = hand3.decideMove(Card.SIX);
+    const nextMove4 = hand4.decideMove(Card.SIX);
+    const nextMove5 = hand5.decideMove(Card.SIX);
+    const nextMove6 = hand6.decideMove(Card.SIX);
+    const nextMove7 = hand7.decideMove(Card.SIX);
+    const nextMove8 = hand8.decideMove(Card.SIX);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove7).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove8).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 7', () => {
+    const nextMove1 = hand1.decideMove(Card.SEVEN);
+    const nextMove2 = hand2.decideMove(Card.SEVEN);
+    const nextMove3 = hand3.decideMove(Card.SEVEN);
+    const nextMove4 = hand4.decideMove(Card.SEVEN);
+    const nextMove5 = hand5.decideMove(Card.SEVEN);
+    const nextMove6 = hand6.decideMove(Card.SEVEN);
+    const nextMove7 = hand7.decideMove(Card.SEVEN);
+    const nextMove8 = hand8.decideMove(Card.SEVEN);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove7).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove8).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 8', () => {
+    const nextMove1 = hand1.decideMove(Card.EIGHT);
+    const nextMove2 = hand2.decideMove(Card.EIGHT);
+    const nextMove3 = hand3.decideMove(Card.EIGHT);
+    const nextMove4 = hand4.decideMove(Card.EIGHT);
+    const nextMove5 = hand5.decideMove(Card.EIGHT);
+    const nextMove6 = hand6.decideMove(Card.EIGHT);
+    const nextMove7 = hand7.decideMove(Card.EIGHT);
+    const nextMove8 = hand8.decideMove(Card.EIGHT);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove7).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove8).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 9', () => {
+    const nextMove1 = hand1.decideMove(Card.NINE);
+    const nextMove2 = hand2.decideMove(Card.NINE);
+    const nextMove3 = hand3.decideMove(Card.NINE);
+    const nextMove4 = hand4.decideMove(Card.NINE);
+    const nextMove5 = hand5.decideMove(Card.NINE);
+    const nextMove6 = hand6.decideMove(Card.NINE);
+    const nextMove7 = hand7.decideMove(Card.NINE);
+    const nextMove8 = hand8.decideMove(Card.NINE);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove7).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove8).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: 10', () => {
+    const nextMove1 = hand1.decideMove(Card.TEN);
+    const nextMove2 = hand2.decideMove(Card.TEN);
+    const nextMove3 = hand3.decideMove(Card.TEN);
+    const nextMove4 = hand4.decideMove(Card.TEN);
+    const nextMove5 = hand5.decideMove(Card.TEN);
+    const nextMove6 = hand6.decideMove(Card.TEN);
+    const nextMove7 = hand7.decideMove(Card.TEN);
+    const nextMove8 = hand8.decideMove(Card.TEN);
+
+    expect(nextMove1).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove2).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove3).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove4).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove5).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove6).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove7).toEqual(Move.DOUBLEDOWN);
+    expect(nextMove8).toEqual(Move.DOUBLEDOWN);
+  });
+
+  it('Dealer: A', () => {
+    const nextMove1 = hand1.decideMove(Card.ACE);
+    const nextMove2 = hand2.decideMove(Card.ACE);
+    const nextMove3 = hand3.decideMove(Card.ACE);
+    const nextMove4 = hand4.decideMove(Card.ACE);
+    const nextMove5 = hand5.decideMove(Card.ACE);
+    const nextMove6 = hand6.decideMove(Card.ACE);
+    const nextMove7 = hand7.decideMove(Card.ACE);
+    const nextMove8 = hand8.decideMove(Card.ACE);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+    expect(nextMove7).toEqual(Move.HIT);
+    expect(nextMove8).toEqual(Move.HIT);
+  });
+});
+
+describe('Hand: 2 10 // 3 9 // 4 8 // 5 7 // 7 5 // 8 4 // 9 3 // 10 2 (Hard 12)', () => {
+  const hand1 = new Hand(Card.TWO, Card.TEN);
+  const hand2 = new Hand(Card.THREE, Card.NINE);
+  const hand3 = new Hand(Card.FOUR, Card.EIGHT);
+  const hand4 = new Hand(Card.FIVE, Card.SEVEN);
+  const hand5 = new Hand(Card.SEVEN, Card.FIVE);
+  const hand6 = new Hand(Card.EIGHT, Card.FOUR);
+  const hand7 = new Hand(Card.NINE, Card.THREE);
+  const hand8 = new Hand(Card.TEN, Card.TWO);
+
+  it('Dealer: 2', () => {
+    const nextMove1 = hand1.decideMove(Card.TWO);
+    const nextMove2 = hand2.decideMove(Card.TWO);
+    const nextMove3 = hand3.decideMove(Card.TWO);
+    const nextMove4 = hand4.decideMove(Card.TWO);
+    const nextMove5 = hand5.decideMove(Card.TWO);
+    const nextMove6 = hand6.decideMove(Card.TWO);
+    const nextMove7 = hand7.decideMove(Card.TWO);
+    const nextMove8 = hand8.decideMove(Card.TWO);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+    expect(nextMove7).toEqual(Move.HIT);
+    expect(nextMove8).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 3', () => {
+    const nextMove1 = hand1.decideMove(Card.THREE);
+    const nextMove2 = hand2.decideMove(Card.THREE);
+    const nextMove3 = hand3.decideMove(Card.THREE);
+    const nextMove4 = hand4.decideMove(Card.THREE);
+    const nextMove5 = hand5.decideMove(Card.THREE);
+    const nextMove6 = hand6.decideMove(Card.THREE);
+    const nextMove7 = hand7.decideMove(Card.THREE);
+    const nextMove8 = hand8.decideMove(Card.THREE);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+    expect(nextMove7).toEqual(Move.HIT);
+    expect(nextMove8).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 4', () => {
+    const nextMove1 = hand1.decideMove(Card.FOUR);
+    const nextMove2 = hand2.decideMove(Card.FOUR);
+    const nextMove3 = hand3.decideMove(Card.FOUR);
+    const nextMove4 = hand4.decideMove(Card.FOUR);
+    const nextMove5 = hand5.decideMove(Card.FOUR);
+    const nextMove6 = hand6.decideMove(Card.FOUR);
+    const nextMove7 = hand7.decideMove(Card.FOUR);
+    const nextMove8 = hand8.decideMove(Card.FOUR);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+    expect(nextMove7).toEqual(Move.STAND);
+    expect(nextMove8).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 5', () => {
+    const nextMove1 = hand1.decideMove(Card.FIVE);
+    const nextMove2 = hand2.decideMove(Card.FIVE);
+    const nextMove3 = hand3.decideMove(Card.FIVE);
+    const nextMove4 = hand4.decideMove(Card.FIVE);
+    const nextMove5 = hand5.decideMove(Card.FIVE);
+    const nextMove6 = hand6.decideMove(Card.FIVE);
+    const nextMove7 = hand7.decideMove(Card.FIVE);
+    const nextMove8 = hand8.decideMove(Card.FIVE);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+    expect(nextMove7).toEqual(Move.STAND);
+    expect(nextMove8).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 6', () => {
+    const nextMove1 = hand1.decideMove(Card.SIX);
+    const nextMove2 = hand2.decideMove(Card.SIX);
+    const nextMove3 = hand3.decideMove(Card.SIX);
+    const nextMove4 = hand4.decideMove(Card.SIX);
+    const nextMove5 = hand5.decideMove(Card.SIX);
+    const nextMove6 = hand6.decideMove(Card.SIX);
+    const nextMove7 = hand7.decideMove(Card.SIX);
+    const nextMove8 = hand8.decideMove(Card.SIX);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+    expect(nextMove7).toEqual(Move.STAND);
+    expect(nextMove8).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 7', () => {
+    const nextMove1 = hand1.decideMove(Card.SEVEN);
+    const nextMove2 = hand2.decideMove(Card.SEVEN);
+    const nextMove3 = hand3.decideMove(Card.SEVEN);
+    const nextMove4 = hand4.decideMove(Card.SEVEN);
+    const nextMove5 = hand5.decideMove(Card.SEVEN);
+    const nextMove6 = hand6.decideMove(Card.SEVEN);
+    const nextMove7 = hand7.decideMove(Card.SEVEN);
+    const nextMove8 = hand8.decideMove(Card.SEVEN);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+    expect(nextMove7).toEqual(Move.HIT);
+    expect(nextMove8).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 8', () => {
+    const nextMove1 = hand1.decideMove(Card.EIGHT);
+    const nextMove2 = hand2.decideMove(Card.EIGHT);
+    const nextMove3 = hand3.decideMove(Card.EIGHT);
+    const nextMove4 = hand4.decideMove(Card.EIGHT);
+    const nextMove5 = hand5.decideMove(Card.EIGHT);
+    const nextMove6 = hand6.decideMove(Card.EIGHT);
+    const nextMove7 = hand7.decideMove(Card.EIGHT);
+    const nextMove8 = hand8.decideMove(Card.EIGHT);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+    expect(nextMove7).toEqual(Move.HIT);
+    expect(nextMove8).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 9', () => {
+    const nextMove1 = hand1.decideMove(Card.NINE);
+    const nextMove2 = hand2.decideMove(Card.NINE);
+    const nextMove3 = hand3.decideMove(Card.NINE);
+    const nextMove4 = hand4.decideMove(Card.NINE);
+    const nextMove5 = hand5.decideMove(Card.NINE);
+    const nextMove6 = hand6.decideMove(Card.NINE);
+    const nextMove7 = hand7.decideMove(Card.NINE);
+    const nextMove8 = hand8.decideMove(Card.NINE);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+    expect(nextMove7).toEqual(Move.HIT);
+    expect(nextMove8).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 10', () => {
+    const nextMove1 = hand1.decideMove(Card.TEN);
+    const nextMove2 = hand2.decideMove(Card.TEN);
+    const nextMove3 = hand3.decideMove(Card.TEN);
+    const nextMove4 = hand4.decideMove(Card.TEN);
+    const nextMove5 = hand5.decideMove(Card.TEN);
+    const nextMove6 = hand6.decideMove(Card.TEN);
+    const nextMove7 = hand7.decideMove(Card.TEN);
+    const nextMove8 = hand8.decideMove(Card.TEN);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+    expect(nextMove7).toEqual(Move.HIT);
+    expect(nextMove8).toEqual(Move.HIT);
+  });
+
+  it('Dealer: A', () => {
+    const nextMove1 = hand1.decideMove(Card.ACE);
+    const nextMove2 = hand2.decideMove(Card.ACE);
+    const nextMove3 = hand3.decideMove(Card.ACE);
+    const nextMove4 = hand4.decideMove(Card.ACE);
+    const nextMove5 = hand5.decideMove(Card.ACE);
+    const nextMove6 = hand6.decideMove(Card.ACE);
+    const nextMove7 = hand7.decideMove(Card.ACE);
+    const nextMove8 = hand8.decideMove(Card.ACE);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+    expect(nextMove7).toEqual(Move.HIT);
+    expect(nextMove8).toEqual(Move.HIT);
+  });
+});
+
+describe('Hand: 3 10 // 4 9 // 5 8 // 6 7 // 7 6 // 8 5 // 9 4 // 10 3 (Hard 13)', () => {
+  const hand1 = new Hand(Card.THREE, Card.TEN);
+  const hand2 = new Hand(Card.FOUR, Card.NINE);
+  const hand3 = new Hand(Card.FIVE, Card.EIGHT);
+  const hand4 = new Hand(Card.SIX, Card.SEVEN);
+  const hand5 = new Hand(Card.SEVEN, Card.SIX);
+  const hand6 = new Hand(Card.EIGHT, Card.FIVE);
+  const hand7 = new Hand(Card.NINE, Card.FOUR);
+  const hand8 = new Hand(Card.TEN, Card.THREE);
+
+  it('Dealer: 2', () => {
+    const nextMove1 = hand1.decideMove(Card.TWO);
+    const nextMove2 = hand2.decideMove(Card.TWO);
+    const nextMove3 = hand3.decideMove(Card.TWO);
+    const nextMove4 = hand4.decideMove(Card.TWO);
+    const nextMove5 = hand5.decideMove(Card.TWO);
+    const nextMove6 = hand6.decideMove(Card.TWO);
+    const nextMove7 = hand7.decideMove(Card.TWO);
+    const nextMove8 = hand8.decideMove(Card.TWO);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+    expect(nextMove7).toEqual(Move.STAND);
+    expect(nextMove8).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 3', () => {
+    const nextMove1 = hand1.decideMove(Card.THREE);
+    const nextMove2 = hand2.decideMove(Card.THREE);
+    const nextMove3 = hand3.decideMove(Card.THREE);
+    const nextMove4 = hand4.decideMove(Card.THREE);
+    const nextMove5 = hand5.decideMove(Card.THREE);
+    const nextMove6 = hand6.decideMove(Card.THREE);
+    const nextMove7 = hand7.decideMove(Card.THREE);
+    const nextMove8 = hand8.decideMove(Card.THREE);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+    expect(nextMove7).toEqual(Move.STAND);
+    expect(nextMove8).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 4', () => {
+    const nextMove1 = hand1.decideMove(Card.FOUR);
+    const nextMove2 = hand2.decideMove(Card.FOUR);
+    const nextMove3 = hand3.decideMove(Card.FOUR);
+    const nextMove4 = hand4.decideMove(Card.FOUR);
+    const nextMove5 = hand5.decideMove(Card.FOUR);
+    const nextMove6 = hand6.decideMove(Card.FOUR);
+    const nextMove7 = hand7.decideMove(Card.FOUR);
+    const nextMove8 = hand8.decideMove(Card.FOUR);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+    expect(nextMove7).toEqual(Move.STAND);
+    expect(nextMove8).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 5', () => {
+    const nextMove1 = hand1.decideMove(Card.FIVE);
+    const nextMove2 = hand2.decideMove(Card.FIVE);
+    const nextMove3 = hand3.decideMove(Card.FIVE);
+    const nextMove4 = hand4.decideMove(Card.FIVE);
+    const nextMove5 = hand5.decideMove(Card.FIVE);
+    const nextMove6 = hand6.decideMove(Card.FIVE);
+    const nextMove7 = hand7.decideMove(Card.FIVE);
+    const nextMove8 = hand8.decideMove(Card.FIVE);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+    expect(nextMove7).toEqual(Move.STAND);
+    expect(nextMove8).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 6', () => {
+    const nextMove1 = hand1.decideMove(Card.SIX);
+    const nextMove2 = hand2.decideMove(Card.SIX);
+    const nextMove3 = hand3.decideMove(Card.SIX);
+    const nextMove4 = hand4.decideMove(Card.SIX);
+    const nextMove5 = hand5.decideMove(Card.SIX);
+    const nextMove6 = hand6.decideMove(Card.SIX);
+    const nextMove7 = hand7.decideMove(Card.SIX);
+    const nextMove8 = hand8.decideMove(Card.SIX);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+    expect(nextMove7).toEqual(Move.STAND);
+    expect(nextMove8).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 7', () => {
+    const nextMove1 = hand1.decideMove(Card.SEVEN);
+    const nextMove2 = hand2.decideMove(Card.SEVEN);
+    const nextMove3 = hand3.decideMove(Card.SEVEN);
+    const nextMove4 = hand4.decideMove(Card.SEVEN);
+    const nextMove5 = hand5.decideMove(Card.SEVEN);
+    const nextMove6 = hand6.decideMove(Card.SEVEN);
+    const nextMove7 = hand7.decideMove(Card.SEVEN);
+    const nextMove8 = hand8.decideMove(Card.SEVEN);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+    expect(nextMove7).toEqual(Move.HIT);
+    expect(nextMove8).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 8', () => {
+    const nextMove1 = hand1.decideMove(Card.EIGHT);
+    const nextMove2 = hand2.decideMove(Card.EIGHT);
+    const nextMove3 = hand3.decideMove(Card.EIGHT);
+    const nextMove4 = hand4.decideMove(Card.EIGHT);
+    const nextMove5 = hand5.decideMove(Card.EIGHT);
+    const nextMove6 = hand6.decideMove(Card.EIGHT);
+    const nextMove7 = hand7.decideMove(Card.EIGHT);
+    const nextMove8 = hand8.decideMove(Card.EIGHT);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+    expect(nextMove7).toEqual(Move.HIT);
+    expect(nextMove8).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 9', () => {
+    const nextMove1 = hand1.decideMove(Card.NINE);
+    const nextMove2 = hand2.decideMove(Card.NINE);
+    const nextMove3 = hand3.decideMove(Card.NINE);
+    const nextMove4 = hand4.decideMove(Card.NINE);
+    const nextMove5 = hand5.decideMove(Card.NINE);
+    const nextMove6 = hand6.decideMove(Card.NINE);
+    const nextMove7 = hand7.decideMove(Card.NINE);
+    const nextMove8 = hand8.decideMove(Card.NINE);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+    expect(nextMove7).toEqual(Move.HIT);
+    expect(nextMove8).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 10', () => {
+    const nextMove1 = hand1.decideMove(Card.TEN);
+    const nextMove2 = hand2.decideMove(Card.TEN);
+    const nextMove3 = hand3.decideMove(Card.TEN);
+    const nextMove4 = hand4.decideMove(Card.TEN);
+    const nextMove5 = hand5.decideMove(Card.TEN);
+    const nextMove6 = hand6.decideMove(Card.TEN);
+    const nextMove7 = hand7.decideMove(Card.TEN);
+    const nextMove8 = hand8.decideMove(Card.TEN);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+    expect(nextMove7).toEqual(Move.HIT);
+    expect(nextMove8).toEqual(Move.HIT);
+  });
+
+  it('Dealer: A', () => {
+    const nextMove1 = hand1.decideMove(Card.ACE);
+    const nextMove2 = hand2.decideMove(Card.ACE);
+    const nextMove3 = hand3.decideMove(Card.ACE);
+    const nextMove4 = hand4.decideMove(Card.ACE);
+    const nextMove5 = hand5.decideMove(Card.ACE);
+    const nextMove6 = hand6.decideMove(Card.ACE);
+    const nextMove7 = hand7.decideMove(Card.ACE);
+    const nextMove8 = hand8.decideMove(Card.ACE);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+    expect(nextMove7).toEqual(Move.HIT);
+    expect(nextMove8).toEqual(Move.HIT);
+  });
+});
+
+describe('Hand: 4 10 // 5 9 // 6 8 // 8 6 // 9 5 // 10 4 (Hard 14)', () => {
+  const hand1 = new Hand(Card.FOUR, Card.TEN);
+  const hand2 = new Hand(Card.FIVE, Card.NINE);
+  const hand3 = new Hand(Card.SIX, Card.EIGHT);
+  const hand4 = new Hand(Card.EIGHT, Card.SIX);
+  const hand5 = new Hand(Card.NINE, Card.FIVE);
+  const hand6 = new Hand(Card.TEN, Card.FOUR);
+
+  it('Dealer: 2', () => {
+    const nextMove1 = hand1.decideMove(Card.TWO);
+    const nextMove2 = hand2.decideMove(Card.TWO);
+    const nextMove3 = hand3.decideMove(Card.TWO);
+    const nextMove4 = hand4.decideMove(Card.TWO);
+    const nextMove5 = hand5.decideMove(Card.TWO);
+    const nextMove6 = hand6.decideMove(Card.TWO);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 3', () => {
+    const nextMove1 = hand1.decideMove(Card.THREE);
+    const nextMove2 = hand2.decideMove(Card.THREE);
+    const nextMove3 = hand3.decideMove(Card.THREE);
+    const nextMove4 = hand4.decideMove(Card.THREE);
+    const nextMove5 = hand5.decideMove(Card.THREE);
+    const nextMove6 = hand6.decideMove(Card.THREE);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 4', () => {
+    const nextMove1 = hand1.decideMove(Card.FOUR);
+    const nextMove2 = hand2.decideMove(Card.FOUR);
+    const nextMove3 = hand3.decideMove(Card.FOUR);
+    const nextMove4 = hand4.decideMove(Card.FOUR);
+    const nextMove5 = hand5.decideMove(Card.FOUR);
+    const nextMove6 = hand6.decideMove(Card.FOUR);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 5', () => {
+    const nextMove1 = hand1.decideMove(Card.FIVE);
+    const nextMove2 = hand2.decideMove(Card.FIVE);
+    const nextMove3 = hand3.decideMove(Card.FIVE);
+    const nextMove4 = hand4.decideMove(Card.FIVE);
+    const nextMove5 = hand5.decideMove(Card.FIVE);
+    const nextMove6 = hand6.decideMove(Card.FIVE);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 6', () => {
+    const nextMove1 = hand1.decideMove(Card.SIX);
+    const nextMove2 = hand2.decideMove(Card.SIX);
+    const nextMove3 = hand3.decideMove(Card.SIX);
+    const nextMove4 = hand4.decideMove(Card.SIX);
+    const nextMove5 = hand5.decideMove(Card.SIX);
+    const nextMove6 = hand6.decideMove(Card.SIX);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 7', () => {
+    const nextMove1 = hand1.decideMove(Card.SEVEN);
+    const nextMove2 = hand2.decideMove(Card.SEVEN);
+    const nextMove3 = hand3.decideMove(Card.SEVEN);
+    const nextMove4 = hand4.decideMove(Card.SEVEN);
+    const nextMove5 = hand5.decideMove(Card.SEVEN);
+    const nextMove6 = hand6.decideMove(Card.SEVEN);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 8', () => {
+    const nextMove1 = hand1.decideMove(Card.EIGHT);
+    const nextMove2 = hand2.decideMove(Card.EIGHT);
+    const nextMove3 = hand3.decideMove(Card.EIGHT);
+    const nextMove4 = hand4.decideMove(Card.EIGHT);
+    const nextMove5 = hand5.decideMove(Card.EIGHT);
+    const nextMove6 = hand6.decideMove(Card.EIGHT);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 9', () => {
+    const nextMove1 = hand1.decideMove(Card.NINE);
+    const nextMove2 = hand2.decideMove(Card.NINE);
+    const nextMove3 = hand3.decideMove(Card.NINE);
+    const nextMove4 = hand4.decideMove(Card.NINE);
+    const nextMove5 = hand5.decideMove(Card.NINE);
+    const nextMove6 = hand6.decideMove(Card.NINE);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 10', () => {
+    const nextMove1 = hand1.decideMove(Card.TEN);
+    const nextMove2 = hand2.decideMove(Card.TEN);
+    const nextMove3 = hand3.decideMove(Card.TEN);
+    const nextMove4 = hand4.decideMove(Card.TEN);
+    const nextMove5 = hand5.decideMove(Card.TEN);
+    const nextMove6 = hand6.decideMove(Card.TEN);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+  });
+
+  it('Dealer: A', () => {
+    const nextMove1 = hand1.decideMove(Card.ACE);
+    const nextMove2 = hand2.decideMove(Card.ACE);
+    const nextMove3 = hand3.decideMove(Card.ACE);
+    const nextMove4 = hand4.decideMove(Card.ACE);
+    const nextMove5 = hand5.decideMove(Card.ACE);
+    const nextMove6 = hand6.decideMove(Card.ACE);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+  });
+});
+
+describe('Hand: 5 10 // 6 9 // 7 8 // 8 7 // 9 6 // 10 5 (Hard 15)', () => {
+  const hand1 = new Hand(Card.FIVE, Card.TEN);
+  const hand2 = new Hand(Card.SIX, Card.NINE);
+  const hand3 = new Hand(Card.SEVEN, Card.EIGHT);
+  const hand4 = new Hand(Card.EIGHT, Card.SEVEN);
+  const hand5 = new Hand(Card.NINE, Card.SIX);
+  const hand6 = new Hand(Card.TEN, Card.FIVE);
+
+  it('Dealer: 2', () => {
+    const nextMove1 = hand1.decideMove(Card.TWO);
+    const nextMove2 = hand2.decideMove(Card.TWO);
+    const nextMove3 = hand3.decideMove(Card.TWO);
+    const nextMove4 = hand4.decideMove(Card.TWO);
+    const nextMove5 = hand5.decideMove(Card.TWO);
+    const nextMove6 = hand6.decideMove(Card.TWO);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 3', () => {
+    const nextMove1 = hand1.decideMove(Card.THREE);
+    const nextMove2 = hand2.decideMove(Card.THREE);
+    const nextMove3 = hand3.decideMove(Card.THREE);
+    const nextMove4 = hand4.decideMove(Card.THREE);
+    const nextMove5 = hand5.decideMove(Card.THREE);
+    const nextMove6 = hand6.decideMove(Card.THREE);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 4', () => {
+    const nextMove1 = hand1.decideMove(Card.FOUR);
+    const nextMove2 = hand2.decideMove(Card.FOUR);
+    const nextMove3 = hand3.decideMove(Card.FOUR);
+    const nextMove4 = hand4.decideMove(Card.FOUR);
+    const nextMove5 = hand5.decideMove(Card.FOUR);
+    const nextMove6 = hand6.decideMove(Card.FOUR);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 5', () => {
+    const nextMove1 = hand1.decideMove(Card.FIVE);
+    const nextMove2 = hand2.decideMove(Card.FIVE);
+    const nextMove3 = hand3.decideMove(Card.FIVE);
+    const nextMove4 = hand4.decideMove(Card.FIVE);
+    const nextMove5 = hand5.decideMove(Card.FIVE);
+    const nextMove6 = hand6.decideMove(Card.FIVE);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 6', () => {
+    const nextMove1 = hand1.decideMove(Card.SIX);
+    const nextMove2 = hand2.decideMove(Card.SIX);
+    const nextMove3 = hand3.decideMove(Card.SIX);
+    const nextMove4 = hand4.decideMove(Card.SIX);
+    const nextMove5 = hand5.decideMove(Card.SIX);
+    const nextMove6 = hand6.decideMove(Card.SIX);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 7', () => {
+    const nextMove1 = hand1.decideMove(Card.SEVEN);
+    const nextMove2 = hand2.decideMove(Card.SEVEN);
+    const nextMove3 = hand3.decideMove(Card.SEVEN);
+    const nextMove4 = hand4.decideMove(Card.SEVEN);
+    const nextMove5 = hand5.decideMove(Card.SEVEN);
+    const nextMove6 = hand6.decideMove(Card.SEVEN);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 8', () => {
+    const nextMove1 = hand1.decideMove(Card.EIGHT);
+    const nextMove2 = hand2.decideMove(Card.EIGHT);
+    const nextMove3 = hand3.decideMove(Card.EIGHT);
+    const nextMove4 = hand4.decideMove(Card.EIGHT);
+    const nextMove5 = hand5.decideMove(Card.EIGHT);
+    const nextMove6 = hand6.decideMove(Card.EIGHT);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 9', () => {
+    const nextMove1 = hand1.decideMove(Card.NINE);
+    const nextMove2 = hand2.decideMove(Card.NINE);
+    const nextMove3 = hand3.decideMove(Card.NINE);
+    const nextMove4 = hand4.decideMove(Card.NINE);
+    const nextMove5 = hand5.decideMove(Card.NINE);
+    const nextMove6 = hand6.decideMove(Card.NINE);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 10', () => {
+    const nextMove1 = hand1.decideMove(Card.TEN);
+    const nextMove2 = hand2.decideMove(Card.TEN);
+    const nextMove3 = hand3.decideMove(Card.TEN);
+    const nextMove4 = hand4.decideMove(Card.TEN);
+    const nextMove5 = hand5.decideMove(Card.TEN);
+    const nextMove6 = hand6.decideMove(Card.TEN);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+  });
+
+  it('Dealer: A', () => {
+    const nextMove1 = hand1.decideMove(Card.ACE);
+    const nextMove2 = hand2.decideMove(Card.ACE);
+    const nextMove3 = hand3.decideMove(Card.ACE);
+    const nextMove4 = hand4.decideMove(Card.ACE);
+    const nextMove5 = hand5.decideMove(Card.ACE);
+    const nextMove6 = hand6.decideMove(Card.ACE);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+    expect(nextMove5).toEqual(Move.HIT);
+    expect(nextMove6).toEqual(Move.HIT);
+  });
+});
+
+describe('Hand: 6 10 // 7 9 // 9 7 // 10 6 (Hard 16)', () => {
+  const hand1 = new Hand(Card.SIX, Card.TEN);
+  const hand2 = new Hand(Card.SEVEN, Card.NINE);
+  const hand3 = new Hand(Card.NINE, Card.SEVEN);
+  const hand4 = new Hand(Card.TEN, Card.SIX);
+
+  it('Dealer: 2', () => {
+    const nextMove1 = hand1.decideMove(Card.TWO);
+    const nextMove2 = hand2.decideMove(Card.TWO);
+    const nextMove3 = hand3.decideMove(Card.TWO);
+    const nextMove4 = hand4.decideMove(Card.TWO);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 3', () => {
+    const nextMove1 = hand1.decideMove(Card.THREE);
+    const nextMove2 = hand2.decideMove(Card.THREE);
+    const nextMove3 = hand3.decideMove(Card.THREE);
+    const nextMove4 = hand4.decideMove(Card.THREE);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 4', () => {
+    const nextMove1 = hand1.decideMove(Card.FOUR);
+    const nextMove2 = hand2.decideMove(Card.FOUR);
+    const nextMove3 = hand3.decideMove(Card.FOUR);
+    const nextMove4 = hand4.decideMove(Card.FOUR);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 5', () => {
+    const nextMove1 = hand1.decideMove(Card.FIVE);
+    const nextMove2 = hand2.decideMove(Card.FIVE);
+    const nextMove3 = hand3.decideMove(Card.FIVE);
+    const nextMove4 = hand4.decideMove(Card.FIVE);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 6', () => {
+    const nextMove1 = hand1.decideMove(Card.SIX);
+    const nextMove2 = hand2.decideMove(Card.SIX);
+    const nextMove3 = hand3.decideMove(Card.SIX);
+    const nextMove4 = hand4.decideMove(Card.SIX);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 7', () => {
+    const nextMove1 = hand1.decideMove(Card.SEVEN);
+    const nextMove2 = hand2.decideMove(Card.SEVEN);
+    const nextMove3 = hand3.decideMove(Card.SEVEN);
+    const nextMove4 = hand4.decideMove(Card.SEVEN);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 8', () => {
+    const nextMove1 = hand1.decideMove(Card.EIGHT);
+    const nextMove2 = hand2.decideMove(Card.EIGHT);
+    const nextMove3 = hand3.decideMove(Card.EIGHT);
+    const nextMove4 = hand4.decideMove(Card.EIGHT);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 9', () => {
+    const nextMove1 = hand1.decideMove(Card.NINE);
+    const nextMove2 = hand2.decideMove(Card.NINE);
+    const nextMove3 = hand3.decideMove(Card.NINE);
+    const nextMove4 = hand4.decideMove(Card.NINE);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+  });
+
+  it('Dealer: 10', () => {
+    const nextMove1 = hand1.decideMove(Card.TEN);
+    const nextMove2 = hand2.decideMove(Card.TEN);
+    const nextMove3 = hand3.decideMove(Card.TEN);
+    const nextMove4 = hand4.decideMove(Card.TEN);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+  });
+
+  it('Dealer: A', () => {
+    const nextMove1 = hand1.decideMove(Card.ACE);
+    const nextMove2 = hand2.decideMove(Card.ACE);
+    const nextMove3 = hand3.decideMove(Card.ACE);
+    const nextMove4 = hand4.decideMove(Card.ACE);
+
+    expect(nextMove1).toEqual(Move.HIT);
+    expect(nextMove2).toEqual(Move.HIT);
+    expect(nextMove3).toEqual(Move.HIT);
+    expect(nextMove4).toEqual(Move.HIT);
+  });
+});
+
+describe('Hand: 7 10 // 8 9 // 8 10 // 9 8 // 9 10 // 10 7 // 10 8 // 10 9 (Hard 17 or more)', () => {
+  const hand1 = new Hand(Card.SEVEN, Card.TEN);
+  const hand2 = new Hand(Card.EIGHT, Card.NINE);
+  const hand3 = new Hand(Card.EIGHT, Card.TEN);
+  const hand4 = new Hand(Card.NINE, Card.EIGHT);
+  const hand5 = new Hand(Card.NINE, Card.TEN);
+  const hand6 = new Hand(Card.TEN, Card.SEVEN);
+  const hand7 = new Hand(Card.TEN, Card.EIGHT);
+  const hand8 = new Hand(Card.TEN, Card.NINE);
+
+  it('Dealer: 2', () => {
+    const nextMove1 = hand1.decideMove(Card.TWO);
+    const nextMove2 = hand2.decideMove(Card.TWO);
+    const nextMove3 = hand3.decideMove(Card.TWO);
+    const nextMove4 = hand4.decideMove(Card.TWO);
+    const nextMove5 = hand5.decideMove(Card.TWO);
+    const nextMove6 = hand6.decideMove(Card.TWO);
+    const nextMove7 = hand7.decideMove(Card.TWO);
+    const nextMove8 = hand8.decideMove(Card.TWO);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+    expect(nextMove7).toEqual(Move.STAND);
+    expect(nextMove8).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 3', () => {
+    const nextMove1 = hand1.decideMove(Card.THREE);
+    const nextMove2 = hand2.decideMove(Card.THREE);
+    const nextMove3 = hand3.decideMove(Card.THREE);
+    const nextMove4 = hand4.decideMove(Card.THREE);
+    const nextMove5 = hand5.decideMove(Card.THREE);
+    const nextMove6 = hand6.decideMove(Card.THREE);
+    const nextMove7 = hand7.decideMove(Card.THREE);
+    const nextMove8 = hand8.decideMove(Card.THREE);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+    expect(nextMove7).toEqual(Move.STAND);
+    expect(nextMove8).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 4', () => {
+    const nextMove1 = hand1.decideMove(Card.FOUR);
+    const nextMove2 = hand2.decideMove(Card.FOUR);
+    const nextMove3 = hand3.decideMove(Card.FOUR);
+    const nextMove4 = hand4.decideMove(Card.FOUR);
+    const nextMove5 = hand5.decideMove(Card.FOUR);
+    const nextMove6 = hand6.decideMove(Card.FOUR);
+    const nextMove7 = hand7.decideMove(Card.FOUR);
+    const nextMove8 = hand8.decideMove(Card.FOUR);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+    expect(nextMove7).toEqual(Move.STAND);
+    expect(nextMove8).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 5', () => {
+    const nextMove1 = hand1.decideMove(Card.FIVE);
+    const nextMove2 = hand2.decideMove(Card.FIVE);
+    const nextMove3 = hand3.decideMove(Card.FIVE);
+    const nextMove4 = hand4.decideMove(Card.FIVE);
+    const nextMove5 = hand5.decideMove(Card.FIVE);
+    const nextMove6 = hand6.decideMove(Card.FIVE);
+    const nextMove7 = hand7.decideMove(Card.FIVE);
+    const nextMove8 = hand8.decideMove(Card.FIVE);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+    expect(nextMove7).toEqual(Move.STAND);
+    expect(nextMove8).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 6', () => {
+    const nextMove1 = hand1.decideMove(Card.SIX);
+    const nextMove2 = hand2.decideMove(Card.SIX);
+    const nextMove3 = hand3.decideMove(Card.SIX);
+    const nextMove4 = hand4.decideMove(Card.SIX);
+    const nextMove5 = hand5.decideMove(Card.SIX);
+    const nextMove6 = hand6.decideMove(Card.SIX);
+    const nextMove7 = hand7.decideMove(Card.SIX);
+    const nextMove8 = hand8.decideMove(Card.SIX);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+    expect(nextMove7).toEqual(Move.STAND);
+    expect(nextMove8).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 7', () => {
+    const nextMove1 = hand1.decideMove(Card.SEVEN);
+    const nextMove2 = hand2.decideMove(Card.SEVEN);
+    const nextMove3 = hand3.decideMove(Card.SEVEN);
+    const nextMove4 = hand4.decideMove(Card.SEVEN);
+    const nextMove5 = hand5.decideMove(Card.SEVEN);
+    const nextMove6 = hand6.decideMove(Card.SEVEN);
+    const nextMove7 = hand7.decideMove(Card.SEVEN);
+    const nextMove8 = hand8.decideMove(Card.SEVEN);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+    expect(nextMove7).toEqual(Move.STAND);
+    expect(nextMove8).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 8', () => {
+    const nextMove1 = hand1.decideMove(Card.EIGHT);
+    const nextMove2 = hand2.decideMove(Card.EIGHT);
+    const nextMove3 = hand3.decideMove(Card.EIGHT);
+    const nextMove4 = hand4.decideMove(Card.EIGHT);
+    const nextMove5 = hand5.decideMove(Card.EIGHT);
+    const nextMove6 = hand6.decideMove(Card.EIGHT);
+    const nextMove7 = hand7.decideMove(Card.EIGHT);
+    const nextMove8 = hand8.decideMove(Card.EIGHT);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+    expect(nextMove7).toEqual(Move.STAND);
+    expect(nextMove8).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 9', () => {
+    const nextMove1 = hand1.decideMove(Card.NINE);
+    const nextMove2 = hand2.decideMove(Card.NINE);
+    const nextMove3 = hand3.decideMove(Card.NINE);
+    const nextMove4 = hand4.decideMove(Card.NINE);
+    const nextMove5 = hand5.decideMove(Card.NINE);
+    const nextMove6 = hand6.decideMove(Card.NINE);
+    const nextMove7 = hand7.decideMove(Card.NINE);
+    const nextMove8 = hand8.decideMove(Card.NINE);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+    expect(nextMove7).toEqual(Move.STAND);
+    expect(nextMove8).toEqual(Move.STAND);
+  });
+
+  it('Dealer: 10', () => {
+    const nextMove1 = hand1.decideMove(Card.TEN);
+    const nextMove2 = hand2.decideMove(Card.TEN);
+    const nextMove3 = hand3.decideMove(Card.TEN);
+    const nextMove4 = hand4.decideMove(Card.TEN);
+    const nextMove5 = hand5.decideMove(Card.TEN);
+    const nextMove6 = hand6.decideMove(Card.TEN);
+    const nextMove7 = hand7.decideMove(Card.TEN);
+    const nextMove8 = hand8.decideMove(Card.TEN);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+    expect(nextMove7).toEqual(Move.STAND);
+    expect(nextMove8).toEqual(Move.STAND);
+  });
+
+  it('Dealer: A', () => {
+    const nextMove1 = hand1.decideMove(Card.ACE);
+    const nextMove2 = hand2.decideMove(Card.ACE);
+    const nextMove3 = hand3.decideMove(Card.ACE);
+    const nextMove4 = hand4.decideMove(Card.ACE);
+    const nextMove5 = hand5.decideMove(Card.ACE);
+    const nextMove6 = hand6.decideMove(Card.ACE);
+    const nextMove7 = hand7.decideMove(Card.ACE);
+    const nextMove8 = hand8.decideMove(Card.ACE);
+
+    expect(nextMove1).toEqual(Move.STAND);
+    expect(nextMove2).toEqual(Move.STAND);
+    expect(nextMove3).toEqual(Move.STAND);
+    expect(nextMove4).toEqual(Move.STAND);
+    expect(nextMove5).toEqual(Move.STAND);
+    expect(nextMove6).toEqual(Move.STAND);
+    expect(nextMove7).toEqual(Move.STAND);
+    expect(nextMove8).toEqual(Move.STAND);
+  });
+});

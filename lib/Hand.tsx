@@ -10,6 +10,21 @@ class Hand {
     this.card2 = card2;
   }
 
+  public getName(): String {
+    let name: String = '';
+
+    if (this.isPair()) {
+      name = `Pair ${this.card1}`;
+    } else if (this.isSoftHands()) {
+      const nonAceCard = this.card1 === Card.ACE ? this.card2 : this.card1;
+      name = `Soft ${nonAceCard}`;
+    } else if (this.isHardHands()) {
+      name = `Hard ${this.getValue()}`;
+    }
+
+    return name;
+  }
+
   public decideMove(dealerCard: Card): Move {
     let handIndex: number = 0;
     let dealerIndex: number = 0;
