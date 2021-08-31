@@ -9,21 +9,25 @@
  */
 
 import React from 'react';
-import {Text, View} from 'react-native';
+import {View, Text} from 'react-native';
 import Card from './lib/Card.enum';
 import Move from './lib/Move.enum';
 import Hand from './lib/Hand';
 
 const App = () => {
-  const hand = new Hand(Card.ACE, Card.FIVE);
-  const dealerCard = Card.SEVEN;
+  const card1 = Card.ACE;
+  const card2 = Card.FIVE;
+  const dealerCard = Card.ACE;
 
+  const hand = new Hand(card1, card2);
   const nextMove = hand.decideMove(dealerCard);
 
   return (
     <View>
-      <Text>Your hand is {hand.getName()}</Text>
-      <Text>The dealer has a(n) {Card[dealerCard]}</Text>
+      <Text>
+        You: {hand.getValue()} ({hand.getName()})
+      </Text>
+      <Text>Dealer: {dealerCard}</Text>
       <Text>Your next move should be {Move[nextMove]}</Text>
     </View>
   );

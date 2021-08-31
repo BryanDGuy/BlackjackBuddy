@@ -160,7 +160,7 @@ class Hand {
     return this.decisionMatrix[handIndex][dealerIndex];
   }
 
-  private getValue(): number {
+  public getValue(): number {
     const combinedValues = this.card1 + this.card2;
     if (
       combinedValues > 21 &&
@@ -169,10 +169,6 @@ class Hand {
       return combinedValues - 10; // Treat the ace as a 1
     }
     return combinedValues;
-  }
-
-  private isBlackjack(): boolean {
-    return this.getValue() === 21;
   }
 
   private isHardHands(): boolean {
