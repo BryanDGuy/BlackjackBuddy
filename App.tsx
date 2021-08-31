@@ -18,13 +18,15 @@ const App = () => {
   const hand = new Hand(Card.ACE, Card.FIVE);
   const dealerCard = Card.SEVEN;
 
+  const nextMove = hand.decideMove(dealerCard);
+
   return (
     <View>
       <Text>
         Your hand is a(n) {Card[hand.card1]} and {Card[hand.card2]}
       </Text>
       <Text>The dealer has a(n) {Card[dealerCard]}</Text>
-      <Text>Your next move should be {Move[hand.decideMove(dealerCard)]}</Text>
+      <Text>Your next move should be {Move[nextMove]}</Text>
     </View>
   );
 };
