@@ -10,17 +10,19 @@
 
 import React from 'react';
 import {View, Text} from 'react-native';
+import DecisionEngine from './lib/DecisionEngine';
 import Card from './lib/Card.enum';
-import Move from './lib/Move.enum';
 import Hand from './lib/Hand';
+import Move from './lib/Move.enum';
 
 const App = () => {
+  const decisionEngine = new DecisionEngine();
   const card1 = Card.ACE;
   const card2 = Card.FIVE;
   const dealerCard = Card.ACE;
 
   const hand = new Hand(card1, card2);
-  const nextMove = hand.decideMove(dealerCard);
+  const nextMove = decisionEngine.decideMove(hand, dealerCard);
 
   return (
     <View>
