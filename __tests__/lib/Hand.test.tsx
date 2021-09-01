@@ -2,8 +2,8 @@
  * @format
  */
 import 'react-native';
-import Card from '../../lib/Card.enum';
-import Hand from '../../lib/Hand';
+import Card from '../../src/lib/Card.enum';
+import Hand from '../../src/lib/Hand';
 
 describe('Hand: 2 2 (Pair 2)', () => {
   const hand = new Hand(Card.TWO, Card.TWO);

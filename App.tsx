@@ -10,10 +10,10 @@
 
 import React from 'react';
 import {View, Text} from 'react-native';
-import DecisionEngine from './lib/DecisionEngine';
-import Card from './lib/Card.enum';
-import Hand from './lib/Hand';
-import Move from './lib/Move.enum';
+import DecisionEngine from './src/lib/DecisionEngine';
+import Card from './src/lib/Card.enum';
+import Hand from './src/lib/Hand';
+import Move from './src/lib/Move.enum';
 
 const App = () => {
   const decisionEngine = new DecisionEngine();

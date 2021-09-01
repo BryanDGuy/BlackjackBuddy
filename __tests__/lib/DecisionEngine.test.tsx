@@ -2,10 +2,10 @@
  * @format
  */
 import 'react-native';
-import Card from '../../lib/Card.enum';
-import Move from '../../lib/Move.enum';
-import Hand from '../../lib/Hand';
-import DecisionEngine from '../../lib/DecisionEngine';
+import Card from '../../src/lib/Card.enum';
+import Move from '../../src/lib/Move.enum';
+import Hand from '../../src/lib/Hand';
+import DecisionEngine from '../../src/lib/DecisionEngine';
 
 describe('Hand: 2 2 (Pair 2)', () => {
   const hand = new Hand(Card.TWO, Card.TWO);
