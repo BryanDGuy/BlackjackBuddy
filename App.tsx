@@ -22,9 +22,8 @@ const App = () => {
       <Text style={styles.header}>{nextMove}</Text>
 
       <View>
-        <Text style={styles.textPrompt}>
-          You: {playerHand.getName()} ({playerHand.getValue()})
-        </Text>
+        <Text style={styles.textPrompt}>You: {playerHand.getName()}</Text>
+        <Text style={styles.textPrompt}>{playerHand.getValue()}</Text>
         <View style={styles.cardContainer}>
           <CardComponent card={Card.TWO} onPress={addToPlayerHand} />
           <CardComponent card={Card.THREE} onPress={addToPlayerHand} />
