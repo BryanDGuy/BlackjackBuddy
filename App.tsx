@@ -19,9 +19,7 @@ const App = () => {
 
   return (
     <View>
-      <View style={styles.header}>
-        <Text style={styles.textPrompt}>{nextMove}</Text>
-      </View>
+      <Text style={styles.header}>{nextMove}</Text>
 
       <View>
         <Text style={styles.textPrompt}>
@@ -62,14 +60,16 @@ const App = () => {
 
 const styles = StyleSheet.create({
   header: {
-    alignItems: 'center',
+    textAlign: 'center',
+    fontSize: 32,
     marginVertical: 8,
   },
   textPrompt: {
     textAlign: 'center',
   },
   cardContainer: {
-    padding: 2,
+    paddingTop: 6,
+    paddingBottom: 40,
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
