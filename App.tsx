@@ -3,144 +3,57 @@ import {View, Text, StyleSheet} from 'react-native';
 import DecisionEngine from './src/lib/DecisionEngine';
 import Card from './src/lib/Card.enum';
 import Hand from './src/lib/Hand';
-import Move from './src/lib/Move.enum';
 import CardComponent from './src/component/Card.component';
 
 const App = () => {
-  const [playerHand, setPlayerHand] = useState<Hand>(new Hand([]));
-  const [dealerHand, setDealerHand] = useState<Hand>(new Hand([]));
+  const [playerCards, setPlayerCards] = useState<Card[]>([]);
+  const [dealerCard, setDealerCard] = useState<Card | undefined>();
 
-  const setCardToPlayerHand = (card: Card) => {
-    const newCardSet = [...playerHand.cards, card];
-    setPlayerHand(new Hand(newCardSet));
+  const addToPlayerHand = (card: Card) => {
+    setPlayerCards([...playerHand.cards, card]);
   };
 
-  const setCardToDealerHand = (card: Card) => {
-    setDealerHand(new Hand([card]));
-  };
-
+  const playerHand = new Hand(playerCards);
   const decisionEngine = new DecisionEngine();
-  const nextMove = decisionEngine.decideMove(playerHand, dealerHand.cards[0]);
+  const nextMove = decisionEngine.decideMove(playerHand, dealerCard);
 
   return (
     <View>
       <View style={styles.header}>
-        <Text>
-          You: {playerHand.getValue()} ({playerHand.getName()})
-        </Text>
-        <Text>Dealer: {dealerHand.cards[0]}</Text>
-        <Text>Your next move should be {Move[nextMove]}</Text>
+        <Text style={styles.textPrompt}>{nextMove}</Text>
       </View>
 
       <View>
-        <Text style={styles.textPrompt}>Pick your cards</Text>
+        <Text style={styles.textPrompt}>
+          You: {playerHand.getName()} ({playerHand.getValue()})
+        </Text>
         <View style={styles.cardContainer}>
-          <CardComponent
-            card={Card.TWO}
-            hand={playerHand}
-            setToHandCallback={setCardToPlayerHand}
-          />
-          <CardComponent
-            card={Card.THREE}
-            hand={playerHand}
-            setToHandCallback={setCardToPlayerHand}
-          />
-          <CardComponent
-            card={Card.FOUR}
-            hand={playerHand}
-            setToHandCallback={setCardToPlayerHand}
-          />
-          <CardComponent
-            card={Card.FIVE}
-            hand={playerHand}
-            setToHandCallback={setCardToPlayerHand}
-          />
-          <CardComponent
-            card={Card.SIX}
-            hand={playerHand}
-            setToHandCallback={setCardToPlayerHand}
-          />
-          <CardComponent
-            card={Card.SEVEN}
-            hand={playerHand}
-            setToHandCallback={setCardToPlayerHand}
-          />
-          <CardComponent
-            card={Card.EIGHT}
-            hand={playerHand}
-            setToHandCallback={setCardToPlayerHand}
-          />
-          <CardComponent
-            card={Card.NINE}
-            hand={playerHand}
-            setToHandCallback={setCardToPlayerHand}
-          />
-          <CardComponent
-            card={Card.TEN}
-            hand={playerHand}
-            setToHandCallback={setCardToPlayerHand}
-          />
-          <CardComponent
-            card={Card.ACE}
-            hand={playerHand}
-            setToHandCallback={setCardToPlayerHand}
-          />
+          <CardComponent card={Card.TWO} onPress={addToPlayerHand} />
+          <CardComponent card={Card.THREE} onPress={addToPlayerHand} />
+          <CardComponent card={Card.FOUR} onPress={addToPlayerHand} />
+          <CardComponent card={Card.FIVE} onPress={addToPlayerHand} />
+          <CardComponent card={Card.SIX} onPress={addToPlayerHand} />
+          <CardComponent card={Card.SEVEN} onPress={addToPlayerHand} />
+          <CardComponent card={Card.EIGHT} onPress={addToPlayerHand} />
+          <CardComponent card={Card.NINE} onPress={addToPlayerHand} />
+          <CardComponent card={Card.TEN} onPress={addToPlayerHand} />
+          <CardComponent card={Card.ACE} onPress={addToPlayerHand} />
         </View>
       </View>
 
       <View>
-        <Text style={styles.textPrompt}>Pick the dealer's card</Text>
+        <Text style={styles.textPrompt}>Dealer: {dealerCard}</Text>
         <View style={styles.cardContainer}>
-          <CardComponent
-            card={Card.TWO}
-            hand={dealerHand}
-            setToHandCallback={setCardToDealerHand}
-          />
-          <CardComponent
-            card={Card.THREE}
-            hand={dealerHand}
-            setToHandCallback={setCardToDealerHand}
-          />
-          <CardComponent
-            card={Card.FOUR}
-            hand={dealerHand}
-            setToHandCallback={setCardToDealerHand}
-          />
-          <CardComponent
-            card={Card.FIVE}
-            hand={dealerHand}
-            setToHandCallback={setCardToDealerHand}
-          />
-          <CardComponent
-            card={Card.SIX}
-            hand={dealerHand}
-            setToHandCallback={setCardToDealerHand}
-          />
-          <CardComponent
-            card={Card.SEVEN}
-            hand={dealerHand}
-            setToHandCallback={setCardToDealerHand}
-          />
-          <CardComponent
-            card={Card.EIGHT}
-            hand={dealerHand}
-            setToHandCallback={setCardToDealerHand}
-          />
-          <CardComponent
-            card={Card.NINE}
-            hand={dealerHand}
-            setToHandCallback={setCardToDealerHand}
-          />
-          <CardComponent
-            card={Card.TEN}
-            hand={dealerHand}
-            setToHandCallback={setCardToDealerHand}
-          />
-          <CardComponent
-            card={Card.ACE}
-            hand={dealerHand}
-            setToHandCallback={setCardToDealerHand}
-          />
+          <CardComponent card={Card.TWO} onPress={setDealerCard} />
+          <CardComponent card={Card.THREE} onPress={setDealerCard} />
+          <CardComponent card={Card.FOUR} onPress={setDealerCard} />
+          <CardComponent card={Card.FIVE} onPress={setDealerCard} />
+          <CardComponent card={Card.SIX} onPress={setDealerCard} />
+          <CardComponent card={Card.SEVEN} onPress={setDealerCard} />
+          <CardComponent card={Card.EIGHT} onPress={setDealerCard} />
+          <CardComponent card={Card.NINE} onPress={setDealerCard} />
+          <CardComponent card={Card.TEN} onPress={setDealerCard} />
+          <CardComponent card={Card.ACE} onPress={setDealerCard} />
         </View>
       </View>
     </View>

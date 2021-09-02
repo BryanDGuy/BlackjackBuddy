@@ -10,7 +10,9 @@ class Hand {
   public getName(): String {
     let name: String = '';
 
-    if (this.getValue() === 21) {
+    if (this.getSize() < 2) {
+      name = '';
+    } else if (this.getValue() === 21) {
       name = 'Blackjack';
     } else if (this.isPair()) {
       name = `Pair ${this.cards[0] === Card.ACE ? 'Ace' : this.cards[0]}`;

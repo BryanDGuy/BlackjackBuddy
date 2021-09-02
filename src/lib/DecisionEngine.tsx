@@ -5,7 +5,14 @@ import Hand from './Hand';
 class DecisionEngine {
   constructor() {}
 
-  public decideMove(playerHand: Hand, dealerCard: Card): Move {
+  public decideMove(playerHand: Hand, dealerCard: Card | undefined): Move {
+    if (!dealerCard) {
+      return Move.SELECTDEALERCARD;
+    }
+    if (playerHand.getSize() < 2) {
+      return Move.SELECTPLAYERCARDS;
+    }
+
     let handIndex: number = 0;
     let dealerIndex: number = 0;
 
