@@ -137,7 +137,10 @@ class DecisionEngine {
       }
     }
 
-    return this.decisionMatrix[handIndex][dealerIndex];
+    const nextMove = this.decisionMatrix[handIndex][dealerIndex];
+    return nextMove === Move.DOUBLEDOWN && playerHand.getSize() > 2
+      ? Move.HIT
+      : nextMove;
   }
 
   private decisionMatrix: Move[][] = [

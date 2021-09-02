@@ -1,219 +1,146 @@
 import React, {useState} from 'react';
-import {View, Text, Button, TouchableHighlight, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import DecisionEngine from './src/lib/DecisionEngine';
 import Card from './src/lib/Card.enum';
 import Hand from './src/lib/Hand';
 import Move from './src/lib/Move.enum';
+import CardComponent from './src/component/Card.component';
 
 const App = () => {
-  const [pickingFirstCard, setPickingFirstCard] = useState(true);
-  const [firstCard, setFirstCard] = useState(Card.TWO);
-  const [secondCard, setSecondCard] = useState(Card.TWO);
-  const [dealerCard, setDealerCard] = useState(Card.TWO);
+  const [playerHand, setPlayerHand] = useState<Hand>(new Hand([]));
+  const [dealerHand, setDealerHand] = useState<Hand>(new Hand([]));
 
-  const isCardInHand = (card: Card) => {
-    return firstCard === card || secondCard === card;
+  const setCardToPlayerHand = (card: Card) => {
+    const newCardSet = [...playerHand.cards, card];
+    setPlayerHand(new Hand(newCardSet));
   };
 
-  const isDealerCard = (card: Card) => {
-    return dealerCard === card;
-  };
-
-  const setCardToHand = (card: Card) => {
-    if (pickingFirstCard) {
-      setFirstCard(card);
-    } else {
-      setSecondCard(card);
-    }
-
-    setPickingFirstCard(!pickingFirstCard);
+  const setCardToDealerHand = (card: Card) => {
+    setDealerHand(new Hand([card]));
   };
 
   const decisionEngine = new DecisionEngine();
-  const hand = new Hand([firstCard, secondCard]);
-  const nextMove = decisionEngine.decideMove(hand, dealerCard);
+  const nextMove = decisionEngine.decideMove(playerHand, dealerHand.cards[0]);
 
   return (
     <View>
       <View style={styles.header}>
         <Text>
-          You: {hand.getValue()} ({hand.getName()})
+          You: {playerHand.getValue()} ({playerHand.getName()})
         </Text>
-        <Text>Dealer: {dealerCard}</Text>
+        <Text>Dealer: {dealerHand.cards[0]}</Text>
         <Text>Your next move should be {Move[nextMove]}</Text>
       </View>
 
       <View>
-        <Text style={styles.textPrompt}>
-          Pick your {pickingFirstCard ? 'first' : 'second'} card
-        </Text>
+        <Text style={styles.textPrompt}>Pick your cards</Text>
         <View style={styles.cardContainer}>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isCardInHand(Card.TWO) ? '#F194FF' : '#2196F3'}
-              onPress={() => setCardToHand(Card.TWO)}
-              title="2">
-              2
-            </Button>
-          </TouchableHighlight>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isCardInHand(Card.THREE) ? '#F194FF' : '#2196F3'}
-              onPress={() => setCardToHand(Card.THREE)}
-              title="3">
-              3
-            </Button>
-          </TouchableHighlight>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isCardInHand(Card.FOUR) ? '#F194FF' : '#2196F3'}
-              onPress={() => setCardToHand(Card.FOUR)}
-              title="4">
-              4
-            </Button>
-          </TouchableHighlight>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isCardInHand(Card.FIVE) ? '#F194FF' : '#2196F3'}
-              onPress={() => setCardToHand(Card.FIVE)}
-              title="5">
-              5
-            </Button>
-          </TouchableHighlight>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isCardInHand(Card.SIX) ? '#F194FF' : '#2196F3'}
-              onPress={() => setCardToHand(Card.SIX)}
-              title="6">
-              6
-            </Button>
-          </TouchableHighlight>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isCardInHand(Card.SEVEN) ? '#F194FF' : '#2196F3'}
-              onPress={() => setCardToHand(Card.SEVEN)}
-              title="7">
-              7
-            </Button>
-          </TouchableHighlight>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isCardInHand(Card.EIGHT) ? '#F194FF' : '#2196F3'}
-              onPress={() => setCardToHand(Card.EIGHT)}
-              title="8">
-              8
-            </Button>
-          </TouchableHighlight>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isCardInHand(Card.NINE) ? '#F194FF' : '#2196F3'}
-              onPress={() => setCardToHand(Card.NINE)}
-              title="9">
-              9
-            </Button>
-          </TouchableHighlight>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isCardInHand(Card.TEN) ? '#F194FF' : '#2196F3'}
-              onPress={() => setCardToHand(Card.TEN)}
-              title="10">
-              10
-            </Button>
-          </TouchableHighlight>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isCardInHand(Card.ACE) ? '#F194FF' : '#2196F3'}
-              onPress={() => setCardToHand(Card.ACE)}
-              title="A">
-              A
-            </Button>
-          </TouchableHighlight>
+          <CardComponent
+            card={Card.TWO}
+            hand={playerHand}
+            setToHandCallback={setCardToPlayerHand}
+          />
+          <CardComponent
+            card={Card.THREE}
+            hand={playerHand}
+            setToHandCallback={setCardToPlayerHand}
+          />
+          <CardComponent
+            card={Card.FOUR}
+            hand={playerHand}
+            setToHandCallback={setCardToPlayerHand}
+          />
+          <CardComponent
+            card={Card.FIVE}
+            hand={playerHand}
+            setToHandCallback={setCardToPlayerHand}
+          />
+          <CardComponent
+            card={Card.SIX}
+            hand={playerHand}
+            setToHandCallback={setCardToPlayerHand}
+          />
+          <CardComponent
+            card={Card.SEVEN}
+            hand={playerHand}
+            setToHandCallback={setCardToPlayerHand}
+          />
+          <CardComponent
+            card={Card.EIGHT}
+            hand={playerHand}
+            setToHandCallback={setCardToPlayerHand}
+          />
+          <CardComponent
+            card={Card.NINE}
+            hand={playerHand}
+            setToHandCallback={setCardToPlayerHand}
+          />
+          <CardComponent
+            card={Card.TEN}
+            hand={playerHand}
+            setToHandCallback={setCardToPlayerHand}
+          />
+          <CardComponent
+            card={Card.ACE}
+            hand={playerHand}
+            setToHandCallback={setCardToPlayerHand}
+          />
         </View>
       </View>
 
       <View>
         <Text style={styles.textPrompt}>Pick the dealer's card</Text>
         <View style={styles.cardContainer}>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isDealerCard(Card.TWO) ? '#F194FF' : '#2196F3'}
-              onPress={() => setDealerCard(Card.TWO)}
-              title="2">
-              2
-            </Button>
-          </TouchableHighlight>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isDealerCard(Card.THREE) ? '#F194FF' : '#2196F3'}
-              onPress={() => setDealerCard(Card.THREE)}
-              title="3">
-              3
-            </Button>
-          </TouchableHighlight>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isDealerCard(Card.FOUR) ? '#F194FF' : '#2196F3'}
-              onPress={() => setDealerCard(Card.FOUR)}
-              title="4">
-              4
-            </Button>
-          </TouchableHighlight>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isDealerCard(Card.FIVE) ? '#F194FF' : '#2196F3'}
-              onPress={() => setDealerCard(Card.FIVE)}
-              title="5">
-              5
-            </Button>
-          </TouchableHighlight>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isDealerCard(Card.SIX) ? '#F194FF' : '#2196F3'}
-              onPress={() => setDealerCard(Card.SIX)}
-              title="6">
-              6
-            </Button>
-          </TouchableHighlight>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isDealerCard(Card.SEVEN) ? '#F194FF' : '#2196F3'}
-              onPress={() => setDealerCard(Card.SEVEN)}
-              title="7">
-              7
-            </Button>
-          </TouchableHighlight>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isDealerCard(Card.EIGHT) ? '#F194FF' : '#2196F3'}
-              onPress={() => setDealerCard(Card.EIGHT)}
-              title="8">
-              8
-            </Button>
-          </TouchableHighlight>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isDealerCard(Card.NINE) ? '#F194FF' : '#2196F3'}
-              onPress={() => setDealerCard(Card.NINE)}
-              title="9">
-              9
-            </Button>
-          </TouchableHighlight>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isDealerCard(Card.TEN) ? '#F194FF' : '#2196F3'}
-              onPress={() => setDealerCard(Card.TEN)}
-              title="10">
-              10
-            </Button>
-          </TouchableHighlight>
-          <TouchableHighlight style={styles.touchable}>
-            <Button
-              color={isDealerCard(Card.ACE) ? '#F194FF' : '#2196F3'}
-              onPress={() => setDealerCard(Card.ACE)}
-              title="A">
-              A
-            </Button>
-          </TouchableHighlight>
+          <CardComponent
+            card={Card.TWO}
+            hand={dealerHand}
+            setToHandCallback={setCardToDealerHand}
+          />
+          <CardComponent
+            card={Card.THREE}
+            hand={dealerHand}
+            setToHandCallback={setCardToDealerHand}
+          />
+          <CardComponent
+            card={Card.FOUR}
+            hand={dealerHand}
+            setToHandCallback={setCardToDealerHand}
+          />
+          <CardComponent
+            card={Card.FIVE}
+            hand={dealerHand}
+            setToHandCallback={setCardToDealerHand}
+          />
+          <CardComponent
+            card={Card.SIX}
+            hand={dealerHand}
+            setToHandCallback={setCardToDealerHand}
+          />
+          <CardComponent
+            card={Card.SEVEN}
+            hand={dealerHand}
+            setToHandCallback={setCardToDealerHand}
+          />
+          <CardComponent
+            card={Card.EIGHT}
+            hand={dealerHand}
+            setToHandCallback={setCardToDealerHand}
+          />
+          <CardComponent
+            card={Card.NINE}
+            hand={dealerHand}
+            setToHandCallback={setCardToDealerHand}
+          />
+          <CardComponent
+            card={Card.TEN}
+            hand={dealerHand}
+            setToHandCallback={setCardToDealerHand}
+          />
+          <CardComponent
+            card={Card.ACE}
+            hand={dealerHand}
+            setToHandCallback={setCardToDealerHand}
+          />
         </View>
       </View>
     </View>
@@ -233,10 +160,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-  },
-  touchable: {
-    width: 80,
-    padding: 1,
   },
 });
 

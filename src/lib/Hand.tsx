@@ -25,8 +25,16 @@ class Hand {
     return name;
   }
 
+  public getSize(): number {
+    return this.cards.length;
+  }
+
   public getValue(): number {
-    const combinedValues = this.cards.reduce((sum, card) => {
+    if (this.cards.length === 0) {
+      return 0;
+    }
+
+    return this.cards.reduce((sum, card) => {
       sum += card;
 
       if (sum > 21 && card === Card.ACE) {
@@ -35,8 +43,6 @@ class Hand {
 
       return sum;
     });
-
-    return combinedValues;
   }
 
   public isHardHands(): boolean {
