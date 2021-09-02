@@ -4,7 +4,8 @@ import Card from '../lib/Card.enum';
 
 type CardComponentProps = {
   card: Card;
-  numberInHand: (card: Card) => number;
+  numberThisCardInHand: (card: Card) => number;
+  disabled?: boolean | undefined;
   onPress: (card: Card) => void;
 };
 
@@ -14,8 +15,11 @@ class CardComponent extends React.Component<CardComponentProps> {
       <TouchableHighlight style={styles.touchable}>
         <Button
           color={
-            this.props.numberInHand(this.props.card) > 0 ? '#0000B2' : '#6666D0'
+            this.props.numberThisCardInHand(this.props.card) > 0
+              ? '#0000B2'
+              : '#6666D0'
           }
+          disabled={this.props.disabled}
           onPress={() => this.props.onPress(this.props.card)}
           title={String(this.props.card === Card.ACE ? 'A' : this.props.card)}
         />

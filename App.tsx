@@ -71,57 +71,67 @@ const App = () => {
       <Text style={programaticStyles}>{nextMove}</Text>
 
       <View>
-        <Text style={styles.textPrompt}>You: {playerHand.getName()}</Text>
+        <Text style={styles.textPrompt}>{playerHand.getName()}</Text>
         <Text style={styles.textPrompt}>{playerHand.getValue()}</Text>
         <View style={styles.cardContainer}>
           <CardComponent
             card={Card.TWO}
-            numberInHand={numberInPlayerHand}
+            numberThisCardInHand={numberInPlayerHand}
+            disabled={playerHand.getValue() >= 21}
             onPress={addToPlayerHand}
           />
           <CardComponent
             card={Card.THREE}
-            numberInHand={numberInPlayerHand}
+            numberThisCardInHand={numberInPlayerHand}
+            disabled={playerHand.getValue() >= 21}
             onPress={addToPlayerHand}
           />
           <CardComponent
             card={Card.FOUR}
-            numberInHand={numberInPlayerHand}
+            numberThisCardInHand={numberInPlayerHand}
+            disabled={playerHand.getValue() >= 21}
             onPress={addToPlayerHand}
           />
           <CardComponent
             card={Card.FIVE}
-            numberInHand={numberInPlayerHand}
+            numberThisCardInHand={numberInPlayerHand}
+            disabled={playerHand.getValue() >= 21}
             onPress={addToPlayerHand}
           />
           <CardComponent
             card={Card.SIX}
-            numberInHand={numberInPlayerHand}
+            numberThisCardInHand={numberInPlayerHand}
+            disabled={playerHand.getValue() >= 21}
             onPress={addToPlayerHand}
           />
           <CardComponent
             card={Card.SEVEN}
-            numberInHand={numberInPlayerHand}
+            numberThisCardInHand={numberInPlayerHand}
+            disabled={playerHand.getValue() >= 21}
             onPress={addToPlayerHand}
           />
           <CardComponent
             card={Card.EIGHT}
-            numberInHand={numberInPlayerHand}
+            numberThisCardInHand={numberInPlayerHand}
+            disabled={playerHand.getValue() >= 21}
             onPress={addToPlayerHand}
           />
           <CardComponent
             card={Card.NINE}
-            numberInHand={numberInPlayerHand}
+            numberThisCardInHand={numberInPlayerHand}
+            disabled={playerHand.getValue() >= 21}
             onPress={addToPlayerHand}
           />
           <CardComponent
             card={Card.TEN}
-            numberInHand={numberInPlayerHand}
+            numberThisCardInHand={numberInPlayerHand}
+            disabled={playerHand.getValue() >= 21}
             onPress={addToPlayerHand}
           />
           <CardComponent
             card={Card.ACE}
-            numberInHand={numberInPlayerHand}
+            numberThisCardInHand={numberInPlayerHand}
+            disabled={playerHand.getValue() >= 21}
             onPress={addToPlayerHand}
           />
         </View>
@@ -132,52 +142,52 @@ const App = () => {
         <View style={styles.cardContainer}>
           <CardComponent
             card={Card.TWO}
-            numberInHand={numberInDealerHand}
+            numberThisCardInHand={numberInDealerHand}
             onPress={setDealerCard}
           />
           <CardComponent
             card={Card.THREE}
-            numberInHand={numberInDealerHand}
+            numberThisCardInHand={numberInDealerHand}
             onPress={setDealerCard}
           />
           <CardComponent
             card={Card.FOUR}
-            numberInHand={numberInDealerHand}
+            numberThisCardInHand={numberInDealerHand}
             onPress={setDealerCard}
           />
           <CardComponent
             card={Card.FIVE}
-            numberInHand={numberInDealerHand}
+            numberThisCardInHand={numberInDealerHand}
             onPress={setDealerCard}
           />
           <CardComponent
             card={Card.SIX}
-            numberInHand={numberInDealerHand}
+            numberThisCardInHand={numberInDealerHand}
             onPress={setDealerCard}
           />
           <CardComponent
             card={Card.SEVEN}
-            numberInHand={numberInDealerHand}
+            numberThisCardInHand={numberInDealerHand}
             onPress={setDealerCard}
           />
           <CardComponent
             card={Card.EIGHT}
-            numberInHand={numberInDealerHand}
+            numberThisCardInHand={numberInDealerHand}
             onPress={setDealerCard}
           />
           <CardComponent
             card={Card.NINE}
-            numberInHand={numberInDealerHand}
+            numberThisCardInHand={numberInDealerHand}
             onPress={setDealerCard}
           />
           <CardComponent
             card={Card.TEN}
-            numberInHand={numberInDealerHand}
+            numberThisCardInHand={numberInDealerHand}
             onPress={setDealerCard}
           />
           <CardComponent
             card={Card.ACE}
-            numberInHand={numberInDealerHand}
+            numberThisCardInHand={numberInDealerHand}
             onPress={setDealerCard}
           />
         </View>
@@ -189,7 +199,7 @@ const App = () => {
         return (
           <CardComponent
             card={card}
-            numberInHand={numberInDealerHand}
+            numberThisCardInHand={numberInDealerHand}
             onPress={setDealerCard}
           />
         );
