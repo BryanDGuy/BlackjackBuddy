@@ -15,7 +15,9 @@ class Hand {
   public getName(): String {
     let name: String = '';
 
-    if (this.isPair()) {
+    if (this.getValue() === 21) {
+      name = 'Blackjack';
+    } else if (this.isPair()) {
       name = `Pair ${this.card1 === 11 ? 'Ace' : this.card1}`;
     } else if (this.isSoftHands()) {
       const nonAceCard = this.card1 === Card.ACE ? this.card2 : this.card1;
