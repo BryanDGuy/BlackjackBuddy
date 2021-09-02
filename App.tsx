@@ -1,15 +1,5 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
 import React, {useState} from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text, Button, StyleSheet} from 'react-native';
 import DecisionEngine from './src/lib/DecisionEngine';
 import Card from './src/lib/Card.enum';
 import Hand from './src/lib/Hand';
@@ -47,7 +37,7 @@ const App = () => {
 
   return (
     <View>
-      <View>
+      <View style={styles.header}>
         <Text>
           You: {hand.getValue()} ({hand.getName()})
         </Text>
@@ -185,5 +175,12 @@ const App = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  header: {
+    alignItems: 'center',
+    marginVertical: 8,
+  },
+});
 
 export default App;

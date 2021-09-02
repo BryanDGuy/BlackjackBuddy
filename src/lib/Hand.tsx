@@ -1,15 +1,12 @@
 import Card from './Card.enum';
-import DecisionEngine from './DecisionEngine';
 
 class Hand {
   public card1: Card;
   public card2: Card;
-  private decisionEngine: DecisionEngine;
 
   constructor(card1: Card, card2: Card) {
     this.card1 = card1;
     this.card2 = card2;
-    this.decisionEngine = new DecisionEngine();
   }
 
   public getName(): String {
