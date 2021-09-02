@@ -50,7 +50,7 @@ class DecisionEngine {
         handIndex = 17;
       }
     } else if (playerHand.isPair()) {
-      switch (playerHand.card1) {
+      switch (playerHand.cards[0]) {
         case Card.ACE: {
           handIndex = 18;
           break;

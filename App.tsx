@@ -19,7 +19,7 @@ const App = () => {
     return dealerCard === card;
   };
 
-  const setHandCard = (card: Card) => {
+  const setCardToHand = (card: Card) => {
     if (pickingFirstCard) {
       setFirstCard(card);
     } else {
@@ -30,7 +30,7 @@ const App = () => {
   };
 
   const decisionEngine = new DecisionEngine();
-  const hand = new Hand(firstCard, secondCard);
+  const hand = new Hand([firstCard, secondCard]);
   const nextMove = decisionEngine.decideMove(hand, dealerCard);
 
   return (
@@ -51,7 +51,7 @@ const App = () => {
           <TouchableHighlight style={styles.touchable}>
             <Button
               color={isCardInHand(Card.TWO) ? '#F194FF' : '#2196F3'}
-              onPress={() => setHandCard(Card.TWO)}
+              onPress={() => setCardToHand(Card.TWO)}
               title="2">
               2
             </Button>
@@ -59,7 +59,7 @@ const App = () => {
           <TouchableHighlight style={styles.touchable}>
             <Button
               color={isCardInHand(Card.THREE) ? '#F194FF' : '#2196F3'}
-              onPress={() => setHandCard(Card.THREE)}
+              onPress={() => setCardToHand(Card.THREE)}
               title="3">
               3
             </Button>
@@ -67,7 +67,7 @@ const App = () => {
           <TouchableHighlight style={styles.touchable}>
             <Button
               color={isCardInHand(Card.FOUR) ? '#F194FF' : '#2196F3'}
-              onPress={() => setHandCard(Card.FOUR)}
+              onPress={() => setCardToHand(Card.FOUR)}
               title="4">
               4
             </Button>
@@ -75,7 +75,7 @@ const App = () => {
           <TouchableHighlight style={styles.touchable}>
             <Button
               color={isCardInHand(Card.FIVE) ? '#F194FF' : '#2196F3'}
-              onPress={() => setHandCard(Card.FIVE)}
+              onPress={() => setCardToHand(Card.FIVE)}
               title="5">
               5
             </Button>
@@ -83,7 +83,7 @@ const App = () => {
           <TouchableHighlight style={styles.touchable}>
             <Button
               color={isCardInHand(Card.SIX) ? '#F194FF' : '#2196F3'}
-              onPress={() => setHandCard(Card.SIX)}
+              onPress={() => setCardToHand(Card.SIX)}
               title="6">
               6
             </Button>
@@ -91,7 +91,7 @@ const App = () => {
           <TouchableHighlight style={styles.touchable}>
             <Button
               color={isCardInHand(Card.SEVEN) ? '#F194FF' : '#2196F3'}
-              onPress={() => setHandCard(Card.SEVEN)}
+              onPress={() => setCardToHand(Card.SEVEN)}
               title="7">
               7
             </Button>
@@ -99,7 +99,7 @@ const App = () => {
           <TouchableHighlight style={styles.touchable}>
             <Button
               color={isCardInHand(Card.EIGHT) ? '#F194FF' : '#2196F3'}
-              onPress={() => setHandCard(Card.EIGHT)}
+              onPress={() => setCardToHand(Card.EIGHT)}
               title="8">
               8
             </Button>
@@ -107,7 +107,7 @@ const App = () => {
           <TouchableHighlight style={styles.touchable}>
             <Button
               color={isCardInHand(Card.NINE) ? '#F194FF' : '#2196F3'}
-              onPress={() => setHandCard(Card.NINE)}
+              onPress={() => setCardToHand(Card.NINE)}
               title="9">
               9
             </Button>
@@ -115,7 +115,7 @@ const App = () => {
           <TouchableHighlight style={styles.touchable}>
             <Button
               color={isCardInHand(Card.TEN) ? '#F194FF' : '#2196F3'}
-              onPress={() => setHandCard(Card.TEN)}
+              onPress={() => setCardToHand(Card.TEN)}
               title="10">
               10
             </Button>
@@ -123,7 +123,7 @@ const App = () => {
           <TouchableHighlight style={styles.touchable}>
             <Button
               color={isCardInHand(Card.ACE) ? '#F194FF' : '#2196F3'}
-              onPress={() => setHandCard(Card.ACE)}
+              onPress={() => setCardToHand(Card.ACE)}
               title="A">
               A
             </Button>

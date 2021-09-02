@@ -1,12 +1,10 @@
 import Card from './Card.enum';
 
 class Hand {
-  public card1: Card;
-  public card2: Card;
+  public cards: Card[];
 
-  constructor(card1: Card, card2: Card) {
-    this.card1 = card1;
-    this.card2 = card2;
+  constructor(cards: Card[]) {
+    this.cards = cards;
   }
 
   public getName(): String {
@@ -15,9 +13,10 @@ class Hand {
     if (this.getValue() === 21) {
       name = 'Blackjack';
     } else if (this.isPair()) {
-      name = `Pair ${this.card1 === 11 ? 'Ace' : this.card1}`;
+      name = `Pair ${this.cards[0] === Card.ACE ? 'Ace' : this.cards[0]}`;
     } else if (this.isSoftHands()) {
-      const nonAceCard = this.card1 === Card.ACE ? this.card2 : this.card1;
+      const nonAceCard =
+        this.cards[0] === Card.ACE ? this.cards[1] : this.cards[0];
       name = `Soft ${nonAceCard}`;
     } else if (this.isHardHands()) {
       name = `Hard ${this.getValue()}`;
@@ -27,13 +26,16 @@ class Hand {
   }
 
   public getValue(): number {
-    const combinedValues = this.card1 + this.card2;
-    if (
-      combinedValues > 21 &&
-      (this.card1 === Card.ACE || this.card2 === Card.ACE)
-    ) {
-      return combinedValues - 10; // Treat the ace as a 1
-    }
+    const combinedValues = this.cards.reduce((sum, card) => {
+      sum += card;
+
+      if (sum > 21 && card === Card.ACE) {
+        sum -= 10;
+      }
+
+      return sum;
+    });
+
     return combinedValues;
   }
 
@@ -43,12 +45,14 @@ class Hand {
 
   public isSoftHands(): boolean {
     return (
-      !this.isPair() && (this.card1 === Card.ACE || this.card2 === Card.ACE)
+      !this.isPair() &&
+      this.cards.length === 2 &&
+      (this.cards[0] === Card.ACE || this.cards[1] === Card.ACE)
     );
   }
 
   public isPair(): boolean {
-    return this.card1 === this.card2;
+    return this.cards.length === 2 && this.cards[0] === this.cards[1];
   }
 }
 
