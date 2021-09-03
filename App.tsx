@@ -27,48 +27,50 @@ const App = () => {
     setDealerCard(undefined);
   };
 
+  const headerStyle = (nextMove: Move) => {
+    const greenColor = '#008000';
+    const redColor = '#FF0000';
+    const orangeColor = '#FFA500';
+    const blueColor = '#0000FF';
+    const blackColor = '#000000';
+
+    let textColor = greenColor;
+    switch (nextMove) {
+      case Move.HIT: {
+        textColor = greenColor;
+        break;
+      }
+      case Move.STAND: {
+        textColor = redColor;
+        break;
+      }
+      case Move.DOUBLEDOWN: {
+        textColor = orangeColor;
+        break;
+      }
+      case Move.SPLIT: {
+        textColor = blueColor;
+        break;
+      }
+      default: {
+        textColor = blackColor;
+        break;
+      }
+    }
+
+    return {
+      ...styles.header,
+      color: textColor,
+    };
+  };
+
   const playerHand = new Hand(playerCards);
   const decisionEngine = new DecisionEngine();
   const nextMove = decisionEngine.decideMove(playerHand, dealerCard);
 
-  const greenColor = '#008000';
-  const redColor = '#FF0000';
-  const orangeColor = '#FFA500';
-  const blueColor = '#0000FF';
-  const blackColor = '#000000';
-
-  let textColor = greenColor;
-  switch (nextMove) {
-    case Move.HIT: {
-      textColor = greenColor;
-      break;
-    }
-    case Move.STAND: {
-      textColor = redColor;
-      break;
-    }
-    case Move.DOUBLEDOWN: {
-      textColor = orangeColor;
-      break;
-    }
-    case Move.SPLIT: {
-      textColor = blueColor;
-      break;
-    }
-    default: {
-      textColor = blackColor;
-      break;
-    }
-  }
-
-  const programaticStyles = {
-    ...styles.header,
-    color: textColor,
-  };
-
   return (
     <View>
-      <Text style={programaticStyles}>{nextMove}</Text>
+      <Text style={headerStyle(nextMove)}>{nextMove}</Text>
 
       <View>
         <Text style={styles.textPrompt}>{playerHand.getName()}</Text>
@@ -196,13 +198,11 @@ const App = () => {
       <Button color="#0000B2" title="Reset" onPress={reset} />
 
       {playerHand.cards.forEach(card => {
-        return (
-          <CardComponent
-            card={card}
-            numberThisCardInHand={numberInDealerHand}
-            onPress={setDealerCard}
-          />
-        );
+        <CardComponent
+          card={card}
+          numberThisCardInHand={numberInPlayerHand}
+          onPress={() => {}}
+        />;
       })}
     </View>
   );
