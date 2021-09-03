@@ -138,7 +138,7 @@ const App = () => {
       </View>
 
       <View>
-        <Text style={styles.textPrompt}>Dealer: {dealerCard}</Text>
+        <Text style={styles.textPrompt}>Dealer</Text>
         <View style={styles.cardContainer}>
           <CardComponent
             card={Card.TWO}
