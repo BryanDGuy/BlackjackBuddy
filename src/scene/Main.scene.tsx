@@ -197,13 +197,17 @@ const MainScene = () => {
 
       <Button color="#0000B2" title="Reset" onPress={reset} />
 
-      {playerHand.cards.forEach(card => {
-        <CardComponent
-          card={card}
-          numberThisCardInHand={numberInPlayerHand}
-          onPress={() => {}}
-        />;
-      })}
+      <View style={styles.cardContainer}>
+        {playerHand.cards.map(card => {
+          return (
+            <CardComponent
+              card={card}
+              numberThisCardInHand={numberInPlayerHand}
+              onPress={() => {}}
+            />
+          );
+        })}
+      </View>
     </View>
   );
 };
