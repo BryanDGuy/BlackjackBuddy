@@ -1,5 +1,11 @@
 import React, {useState} from 'react';
-import {View, Text, Button, FlatList, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  FlatList,
+  StyleSheet,
+  TouchableHighlight,
+} from 'react-native';
 import DecisionEngine from '../lib/DecisionEngine';
 import Card from '../lib/Card.enum';
 import Hand from '../lib/Hand';
@@ -80,7 +86,9 @@ const MainScene = () => {
   const playerHand = new Hand(playerCards);
   const nextMove = decisionEngine.decideMove(playerHand, dealerCard);
   const isSelectionDisabled =
-    nextMove === Move.STAND || nextMove === Move.DOUBLEDOWN;
+    nextMove === Move.STAND ||
+    nextMove === Move.DOUBLEDOWN ||
+    (nextMove === Move.SELECTDEALERCARD && playerHand.getSize() >= 2);
 
   const renderPlayerSelection = (cardListItem: {item: Card}) => (
     <CardComponent
@@ -129,10 +137,12 @@ const MainScene = () => {
         renderItem={renderDealerSelection}
       />
 
-      <Button color="#0000B2" title="Reset" onPress={reset} />
+      <TouchableHighlight style={styles.resetButton} onPress={reset}>
+        <Text style={styles.resetText}>RESET</Text>
+      </TouchableHighlight>
 
       <FlatList
-        contentContainerStyle={styles.cardContainer}
+        contentContainerStyle={styles.handContainer}
         data={getPlayerHandCounts()}
         numColumns={1}
         renderItem={renderPlayerCards}
@@ -151,8 +161,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   cardContainer: {
+    paddingBottom: 20,
+    alignItems: 'center',
+  },
+  resetButton: {
+    backgroundColor: '#0000B2',
+    padding: 6,
+    alignItems: 'center',
+  },
+  resetText: {
+    color: '#FFFFFF',
+  },
+  handContainer: {
     paddingTop: 6,
-    paddingBottom: 40,
     alignItems: 'center',
   },
 });

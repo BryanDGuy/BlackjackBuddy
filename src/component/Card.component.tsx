@@ -1,5 +1,5 @@
 import React from 'react';
-import {TouchableHighlight, Button, StyleSheet} from 'react-native';
+import {TouchableHighlight, StyleSheet, Text, View} from 'react-native';
 import Card from '../lib/Card.enum';
 
 type CardComponentProps = {
@@ -10,24 +10,52 @@ type CardComponentProps = {
 };
 
 class CardComponent extends React.Component<CardComponentProps> {
+  buttonStyle() {
+    const greyColor = '#808080';
+    const lightBlueColor = '#6666D0';
+    const darkBlueColor = '#0000B2';
+
+    let backgroundColor = lightBlueColor;
+    if (this.props.disabled) {
+      backgroundColor = greyColor;
+    } else if (this.props.numberThisCardInHand > 0) {
+      backgroundColor = darkBlueColor;
+    }
+
+    return {
+      ...styles.button,
+      backgroundColor,
+    };
+  }
+
   render() {
     return (
-      <TouchableHighlight style={styles.touchable}>
-        <Button
-          color={this.props.numberThisCardInHand > 0 ? '#0000B2' : '#6666D0'}
-          disabled={this.props.disabled}
-          onPress={() => this.props.onPress(this.props.card)}
-          title={String(this.props.card === Card.ACE ? 'A' : this.props.card)}
-        />
+      <TouchableHighlight
+        style={styles.highlightContainer}
+        disabled={this.props.disabled}
+        onPress={() => this.props.onPress(this.props.card)}>
+        <View style={this.buttonStyle()}>
+          <Text style={styles.buttonText}>
+            {this.props.card === Card.ACE ? 'A' : this.props.card}
+          </Text>
+        </View>
       </TouchableHighlight>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  touchable: {
+  highlightContainer: {
+    padding: 2,
+  },
+  button: {
     width: 80,
-    padding: 1,
+    alignItems: 'center',
+    backgroundColor: '#6666D0',
+    padding: 10,
+  },
+  buttonText: {
+    color: '#FFFFFF',
   },
 });
 
