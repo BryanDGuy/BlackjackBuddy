@@ -22,8 +22,16 @@ const MainScene = () => {
     Card.ACE,
   ];
 
-  const numberInPlayerHand = (card: Card) => {
-    return playerCards.filter(playerCard => playerCard === card).length;
+  const getPlayerHandCounts = () => {
+    const playerHandCounts = new Map();
+    for (const card of playerHand.cards) {
+      if (playerHandCounts.has(card)) {
+        playerHandCounts.set(card, playerHandCounts.get(card) + 1);
+      } else {
+        playerHandCounts.set(card, 1);
+      }
+    }
+    return Array.from(playerHandCounts);
   };
 
   const reset = () => {
@@ -77,7 +85,10 @@ const MainScene = () => {
   const renderPlayerSelection = (cardListItem: {item: Card}) => (
     <CardComponent
       card={cardListItem.item}
-      numberThisCardInHand={numberInPlayerHand}
+      numberThisCardInHand={
+        playerCards.filter(playerCard => playerCard === cardListItem.item)
+          .length
+      }
       disabled={isSelectionDisabled}
       onPress={card => setPlayerCards([...playerHand.cards, card])}
     />
@@ -86,17 +97,15 @@ const MainScene = () => {
   const renderDealerSelection = (cardListItem: {item: Card}) => (
     <CardComponent
       card={cardListItem.item}
-      numberThisCardInHand={card => (card === dealerCard ? 1 : 0)}
+      numberThisCardInHand={cardListItem.item === dealerCard ? 1 : 0}
       onPress={setDealerCard}
     />
   );
 
-  const renderPlayerCards = (cardListItem: {item: Card}) => (
-    <CardComponent
-      card={cardListItem.item}
-      numberThisCardInHand={numberInPlayerHand}
-      onPress={() => {}}
-    />
+  const renderPlayerCards = (cardListItem: {item: any}) => (
+    <Text>
+      {cardListItem.item[0]} x{cardListItem.item[1]}
+    </Text>
   );
 
   return (
@@ -124,8 +133,8 @@ const MainScene = () => {
 
       <FlatList
         contentContainerStyle={styles.cardContainer}
-        data={playerHand.cards}
-        numColumns={4}
+        data={getPlayerHandCounts()}
+        numColumns={1}
         renderItem={renderPlayerCards}
       />
     </View>
