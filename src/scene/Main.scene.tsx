@@ -91,7 +91,7 @@ const MainScene = () => {
     <CardComponent
       card={cardListItem.item}
       isCardInHand={
-        !!playerCards.find(playerCard => playerCard === cardListItem.item)
+        !!playerHand.cards.find(playerCard => playerCard === cardListItem.item)
       }
       disabled={isSelectionDisabled}
       onPress={card => setPlayerCards([...playerHand.cards, card])}
