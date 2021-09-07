@@ -4,7 +4,7 @@ import Card from '../lib/Card.enum';
 
 type CardComponentProps = {
   card: Card;
-  numberThisCardInHand: number;
+  isCardInHand: boolean;
   disabled?: boolean | undefined;
   onPress: (card: Card) => void;
 };
@@ -18,7 +18,7 @@ class CardComponent extends React.Component<CardComponentProps> {
     let backgroundColor = lightBlueColor;
     if (this.props.disabled) {
       backgroundColor = greyColor;
-    } else if (this.props.numberThisCardInHand > 0) {
+    } else if (this.props.isCardInHand) {
       backgroundColor = darkBlueColor;
     }
 

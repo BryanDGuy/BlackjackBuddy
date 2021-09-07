@@ -31,11 +31,8 @@ const MainScene = () => {
   const getPlayerHandCounts = () => {
     const playerHandCounts = new Map();
     for (const card of playerHand.cards) {
-      if (playerHandCounts.has(card)) {
-        playerHandCounts.set(card, playerHandCounts.get(card) + 1);
-      } else {
-        playerHandCounts.set(card, 1);
-      }
+      const count = playerHandCounts.get(card) + 1 || 1;
+      playerHandCounts.set(card, count);
     }
     return Array.from(playerHandCounts);
   };
@@ -93,9 +90,8 @@ const MainScene = () => {
   const renderPlayerSelection = (cardListItem: {item: Card}) => (
     <CardComponent
       card={cardListItem.item}
-      numberThisCardInHand={
-        playerCards.filter(playerCard => playerCard === cardListItem.item)
-          .length
+      isCardInHand={
+        !!playerCards.find(playerCard => playerCard === cardListItem.item)
       }
       disabled={isSelectionDisabled}
       onPress={card => setPlayerCards([...playerHand.cards, card])}
@@ -105,7 +101,7 @@ const MainScene = () => {
   const renderDealerSelection = (cardListItem: {item: Card}) => (
     <CardComponent
       card={cardListItem.item}
-      numberThisCardInHand={cardListItem.item === dealerCard ? 1 : 0}
+      isCardInHand={cardListItem.item === dealerCard}
       onPress={setDealerCard}
     />
   );
