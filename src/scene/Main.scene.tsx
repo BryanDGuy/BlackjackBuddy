@@ -103,26 +103,22 @@ const MainScene = () => {
     <View>
       <Text style={headerStyle(nextMove)}>{nextMove}</Text>
 
-      <View>
-        <Text style={styles.textPrompt}>{playerHand.getName()}</Text>
-        <Text style={styles.textPrompt}>{playerHand.getValue()}</Text>
-        <FlatList
-          contentContainerStyle={styles.cardContainer}
-          data={allCards}
-          numColumns={4}
-          renderItem={renderPlayerSelection}
-        />
-      </View>
+      <Text style={styles.textPrompt}>{playerHand.getName()}</Text>
+      <Text style={styles.textPrompt}>{playerHand.getValue()}</Text>
+      <FlatList
+        contentContainerStyle={styles.cardContainer}
+        data={allCards}
+        numColumns={4}
+        renderItem={renderPlayerSelection}
+      />
 
-      <View>
-        <Text style={styles.textPrompt}>Dealer</Text>
-        <FlatList
-          contentContainerStyle={styles.cardContainer}
-          data={allCards}
-          numColumns={4}
-          renderItem={renderDealerSelection}
-        />
-      </View>
+      <Text style={styles.textPrompt}>Dealer</Text>
+      <FlatList
+        contentContainerStyle={styles.cardContainer}
+        data={allCards}
+        numColumns={4}
+        renderItem={renderDealerSelection}
+      />
 
       <Button color="#0000B2" title="Reset" onPress={reset} />
 
