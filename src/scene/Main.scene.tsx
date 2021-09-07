@@ -106,11 +106,15 @@ const MainScene = () => {
     />
   );
 
-  const renderPlayerCards = (cardListItem: {item: any}) => (
-    <Text>
-      {cardListItem.item[0]} x{cardListItem.item[1]}
-    </Text>
-  );
+  const renderPlayerCards = (cardListItem: {item: any}) => {
+    const cardAsString =
+      cardListItem.item[0] === Card.ACE ? 'A' : cardListItem.item[0];
+    return (
+      <Text>
+        {cardAsString} x{cardListItem.item[1]}
+      </Text>
+    );
+  };
 
   return (
     <View>
