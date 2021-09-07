@@ -138,7 +138,7 @@ const MainScene = () => {
       />
 
       <TouchableHighlight style={styles.resetButton} onPress={reset}>
-        <Text style={styles.resetText}>RESET</Text>
+        <Text style={styles.resetText}>Reset</Text>
       </TouchableHighlight>
 
       <FlatList
