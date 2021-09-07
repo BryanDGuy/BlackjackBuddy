@@ -52,7 +52,7 @@ const MainScene = () => {
     const blueColor = '#0000FF';
     const blackColor = '#000000';
 
-    let textColor = greenColor;
+    let textColor: string;
     switch (nextMove) {
       case Move.HIT: {
         textColor = greenColor;
