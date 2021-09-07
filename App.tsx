@@ -68,72 +68,73 @@ const App = () => {
   const decisionEngine = new DecisionEngine();
   const nextMove = decisionEngine.decideMove(playerHand, dealerCard);
 
+  const isDisabled = nextMove === Move.DOUBLEDOWN || nextMove === Move.STAND;
+
   return (
     <View>
       <Text style={headerStyle(nextMove)}>{nextMove}</Text>
 
       <View>
-        <Text style={styles.textPrompt}>{playerHand.getName()}</Text>
         <Text style={styles.textPrompt}>{playerHand.getValue()}</Text>
         <View style={styles.cardContainer}>
           <CardComponent
             card={Card.TWO}
             numberThisCardInHand={numberInPlayerHand}
-            disabled={playerHand.getValue() >= 21}
+            disabled={isDisabled}
             onPress={addToPlayerHand}
           />
           <CardComponent
             card={Card.THREE}
             numberThisCardInHand={numberInPlayerHand}
-            disabled={playerHand.getValue() >= 21}
+            disabled={isDisabled}
             onPress={addToPlayerHand}
           />
           <CardComponent
             card={Card.FOUR}
             numberThisCardInHand={numberInPlayerHand}
-            disabled={playerHand.getValue() >= 21}
+            disabled={isDisabled}
             onPress={addToPlayerHand}
           />
           <CardComponent
             card={Card.FIVE}
             numberThisCardInHand={numberInPlayerHand}
-            disabled={playerHand.getValue() >= 21}
+            disabled={isDisabled}
             onPress={addToPlayerHand}
           />
           <CardComponent
             card={Card.SIX}
             numberThisCardInHand={numberInPlayerHand}
-            disabled={playerHand.getValue() >= 21}
+            disabled={isDisabled}
             onPress={addToPlayerHand}
           />
           <CardComponent
             card={Card.SEVEN}
             numberThisCardInHand={numberInPlayerHand}
-            disabled={playerHand.getValue() >= 21}
+            disabled={isDisabled}
             onPress={addToPlayerHand}
           />
           <CardComponent
             card={Card.EIGHT}
             numberThisCardInHand={numberInPlayerHand}
-            disabled={playerHand.getValue() >= 21}
+            disabled={isDisabled}
             onPress={addToPlayerHand}
           />
           <CardComponent
             card={Card.NINE}
             numberThisCardInHand={numberInPlayerHand}
-            disabled={playerHand.getValue() >= 21}
+            disabled={isDisabled}
             onPress={addToPlayerHand}
           />
           <CardComponent
             card={Card.TEN}
             numberThisCardInHand={numberInPlayerHand}
-            disabled={playerHand.getValue() >= 21}
+            disabled={isDisabled}
             onPress={addToPlayerHand}
           />
           <CardComponent
             card={Card.ACE}
             numberThisCardInHand={numberInPlayerHand}
-            disabled={playerHand.getValue() >= 21}
+            disabled={isDisabled}
             onPress={addToPlayerHand}
           />
         </View>
@@ -196,14 +197,6 @@ const App = () => {
       </View>
 
       <Button color="#0000B2" title="Reset" onPress={reset} />
-
-      {playerHand.cards.forEach(card => {
-        <CardComponent
-          card={card}
-          numberThisCardInHand={numberInPlayerHand}
-          onPress={() => {}}
-        />;
-      })}
     </View>
   );
 };
