@@ -121,7 +121,9 @@ const MainScene = () => {
       <Text style={headerStyle(nextMove)}>{nextMove}</Text>
 
       <Text style={styles.textPrompt}>{playerHand.getName()}</Text>
-      <Text style={styles.textPrompt}>{playerHand.getValue()}</Text>
+      <Text style={styles.textPrompt}>
+        {playerHand.getSize() > 0 ? playerHand.getValue() : 'Your Hand'}
+      </Text>
       <FlatList
         contentContainerStyle={styles.cardContainer}
         data={allCards}
